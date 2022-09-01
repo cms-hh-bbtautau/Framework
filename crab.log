@@ -1,0 +1,185 @@
+DEBUG 2022-09-01 16:20:47.533 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-01 16:20:47.533 UTC: 	 Running on: Linux lxplus8s17.cern.ch 4.18.0-408.el8.x86_64 #1 SMP Mon Jul 18 17:42:52 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Stream 8
+DEBUG 2022-09-01 16:20:47.533 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-09-01 16:20:47.535 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2022-09-01 16:20:47.592 UTC: 	 Checking credentials
+DEBUG 2022-09-01 16:20:47.592 UTC: 	 Proxy file /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy not found
+DEBUG 2022-09-01 16:20:47.592 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2022-09-01 16:20:47.592 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms
+DEBUG 2022-09-01 16:20:54.341 UTC: 	 output : 
+ error: 
+ retcode : 1
+ERROR 2022-09-01 16:20:54.342 UTC: 	 
+
+ERROR 2022-09-01 16:20:54.342 UTC: 	 Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+ERROR 2022-09-01 16:20:54.342 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 355, in __init__
+    self.handleVomsProxy(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 459, in handleVomsProxy
+    proxyInfo = self.credentialHandler.createNewVomsProxy(timeLeftThreshold=720, \
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/CredentialInteractions.py", line 103, in createNewVomsProxy
+    proxy.create()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ProxyInteractions.py", line 52, in create
+    raise ProxyCreationException(msg)
+CRABClient.ClientExceptions.ProxyCreationException: Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+INFO 2022-09-01 16:20:54.395 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/crab.log
+DEBUG 2022-09-01 16:21:01.907 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-01 16:21:01.907 UTC: 	 Running on: Linux lxplus8s17.cern.ch 4.18.0-408.el8.x86_64 #1 SMP Mon Jul 18 17:42:52 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Stream 8
+DEBUG 2022-09-01 16:21:01.907 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-09-01 16:21:01.908 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2022-09-01 16:21:01.909 UTC: 	 Checking credentials
+DEBUG 2022-09-01 16:21:01.909 UTC: 	 Proxy file /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy not found
+DEBUG 2022-09-01 16:21:01.909 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2022-09-01 16:21:01.909 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms
+DEBUG 2022-09-01 16:21:05.559 UTC: 	 output : 
+ error: 
+ retcode : 1
+ERROR 2022-09-01 16:21:05.559 UTC: 	 
+
+ERROR 2022-09-01 16:21:05.559 UTC: 	 Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+ERROR 2022-09-01 16:21:05.560 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 355, in __init__
+    self.handleVomsProxy(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 459, in handleVomsProxy
+    proxyInfo = self.credentialHandler.createNewVomsProxy(timeLeftThreshold=720, \
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/CredentialInteractions.py", line 103, in createNewVomsProxy
+    proxy.create()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ProxyInteractions.py", line 52, in create
+    raise ProxyCreationException(msg)
+CRABClient.ClientExceptions.ProxyCreationException: Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+INFO 2022-09-01 16:21:05.565 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/crab.log
+DEBUG 2022-09-01 16:21:08.264 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-01 16:21:08.264 UTC: 	 Running on: Linux lxplus8s17.cern.ch 4.18.0-408.el8.x86_64 #1 SMP Mon Jul 18 17:42:52 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Stream 8
+DEBUG 2022-09-01 16:21:08.264 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-09-01 16:21:08.265 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2022-09-01 16:21:08.266 UTC: 	 Checking credentials
+DEBUG 2022-09-01 16:21:08.266 UTC: 	 Proxy file /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy not found
+DEBUG 2022-09-01 16:21:08.266 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2022-09-01 16:21:08.266 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms
+DEBUG 2022-09-01 16:21:13.866 UTC: 	 output : 
+ error: 
+ retcode : 1
+ERROR 2022-09-01 16:21:13.866 UTC: 	 
+
+ERROR 2022-09-01 16:21:13.866 UTC: 	 Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+ERROR 2022-09-01 16:21:13.867 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 355, in __init__
+    self.handleVomsProxy(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 459, in handleVomsProxy
+    proxyInfo = self.credentialHandler.createNewVomsProxy(timeLeftThreshold=720, \
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/CredentialInteractions.py", line 103, in createNewVomsProxy
+    proxy.create()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ProxyInteractions.py", line 52, in create
+    raise ProxyCreationException(msg)
+CRABClient.ClientExceptions.ProxyCreationException: Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+INFO 2022-09-01 16:21:13.871 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/crab.log
+DEBUG 2022-09-01 16:21:21.908 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-01 16:21:21.909 UTC: 	 Running on: Linux lxplus8s17.cern.ch 4.18.0-408.el8.x86_64 #1 SMP Mon Jul 18 17:42:52 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Stream 8
+DEBUG 2022-09-01 16:21:21.909 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-09-01 16:21:21.909 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2022-09-01 16:21:21.910 UTC: 	 Checking credentials
+DEBUG 2022-09-01 16:21:21.910 UTC: 	 Proxy file /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy not found
+DEBUG 2022-09-01 16:21:21.910 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2022-09-01 16:21:21.910 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms
+DEBUG 2022-09-01 16:21:26.644 UTC: 	 output : 
+ error: 
+ retcode : 1
+ERROR 2022-09-01 16:21:26.644 UTC: 	 
+
+ERROR 2022-09-01 16:21:26.644 UTC: 	 Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+ERROR 2022-09-01 16:21:26.644 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 355, in __init__
+    self.handleVomsProxy(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 459, in handleVomsProxy
+    proxyInfo = self.credentialHandler.createNewVomsProxy(timeLeftThreshold=720, \
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/CredentialInteractions.py", line 103, in createNewVomsProxy
+    proxy.create()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ProxyInteractions.py", line 52, in create
+    raise ProxyCreationException(msg)
+CRABClient.ClientExceptions.ProxyCreationException: Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+INFO 2022-09-01 16:21:26.661 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/crab.log
+DEBUG 2022-09-01 16:21:57.590 UTC: 	 CRAB Client version: v3.220823
+DEBUG 2022-09-01 16:21:57.591 UTC: 	 Running on: Linux lxplus8s17.cern.ch 4.18.0-408.el8.x86_64 #1 SMP Mon Jul 18 17:42:52 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Stream 8
+DEBUG 2022-09-01 16:21:57.591 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2022-09-01 16:21:57.591 UTC: 	 Found CRAB cache file /afs/cern.ch/user/v/vdamante/.crab3
+DEBUG 2022-09-01 16:21:57.592 UTC: 	 Checking credentials
+DEBUG 2022-09-01 16:21:57.592 UTC: 	 Proxy file /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy not found
+DEBUG 2022-09-01 16:21:57.593 UTC: 	 Creating new proxy for 172:00 hours
+DEBUG 2022-09-01 16:21:57.593 UTC: 	 Executing command :
+ voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms
+DEBUG 2022-09-01 16:22:04.359 UTC: 	 output : 
+ error: 
+ retcode : 1
+ERROR 2022-09-01 16:22:04.359 UTC: 	 
+
+ERROR 2022-09-01 16:22:04.359 UTC: 	 Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+ERROR 2022-09-01 16:22:04.359 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/checkwrite.py", line 20, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 355, in __init__
+    self.handleVomsProxy(proxyOptsSetPlace)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/Commands/SubCommand.py", line 459, in handleVomsProxy
+    proxyInfo = self.credentialHandler.createNewVomsProxy(timeLeftThreshold=720, \
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/CredentialInteractions.py", line 103, in createNewVomsProxy
+    proxy.create()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220823.00/lib/CRABClient/ProxyInteractions.py", line 52, in create
+    raise ProxyCreationException(msg)
+CRABClient.ClientExceptions.ProxyCreationException: Error executing voms-proxy-init --rfc --cert ~/.globus/usercert.pem --key ~/.globus/userkey.pem --out /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/data/voms.proxy --valid 192:00 --voms cms:/cms:
+
+
+INFO 2022-09-01 16:22:04.365 UTC: 	 Log file is /afs/cern.ch/work/v/vdamante/hhbbTauTauRes/Framework/crab.log

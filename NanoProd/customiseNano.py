@@ -38,7 +38,7 @@ def customise(process):
     "keep+ abs(pdgId) == 15 ",  #  keep first gen decay product for all tau
     "+keep abs(pdgId) == 11 || abs(pdgId) == 13 || abs(pdgId) == 15", #keep leptons, with at most one mother back in the history
     "drop abs(pdgId)= 2212 && abs(pz) > 1000", #drop LHC protons accidentally added by previous keeps
-    "keep abs(pdgId) == 23 || abs(pdgId) == 24 || abs(pdgId) == 25 || abs(pdgId) == 39 || abs(pdgId) == 41",   # keep VIP particles
+    "keep abs(pdgId) == 23 || abs(pdgId) == 24 || abs(pdgId) == 25 || abs(pdgId) == 39 || abs(pdgId) == 35",   # keep VIP particles
   )
 
   process = nanoAOD_addDeepInfoAK4CHS(process, False, False, True)

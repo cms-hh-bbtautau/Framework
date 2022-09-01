@@ -1,0 +1,36 @@
+cmsswPython: RunKit/nanoProdWrapper.py
+params:
+  customise: NanoProd/NanoProd/customize.customize
+  skimCfg: skim.yaml
+  maxEvents: -1
+splitting: FileBased
+unitsPerJob: 4
+scriptExe: RunKit/nanoProdCrabJob.sh
+outputFiles:
+  - nano.root
+filesToTransfer:
+  - RunKit/nanoProdCrabJob.sh
+  - RunKit/nanoProdCrabJob.py
+  - RunKit/skim_tree.py
+  - RunKit/sh_tools.py
+  - NanoProd/data/skim.yaml
+site: T2_CH_CERN
+crabOutput: /store/user/vdamante/HH_bbtautau_resonant_Run2/nanoAOD_prod1
+finalOutput: /eos/home-v/vdamante/HH_bbtautau_resonant_Run2/nanoAOD_prod1
+#crabOutput: /store/group/phys_tau/kandroso/DeepTau_v2p5_UL18_prod
+#finalOutput: /eos/cms/store/group/phys_tau/kandroso/DeepTau_v2p5_UL18
+localOutputPrefix: /eos/cms
+maxMemory: 2500
+numCores: 1
+inputDBS: global
+allowNonValid: False
+dryrun: False
+maxResubmitCount: 4
+maxRecoveryCount: 2
+updateInterval: 60
+postProcessing:
+  lawTask: CrabNanoProdTaskPostProcess
+  workflow: htcondor
+  bootstrap: bootstrap.sh
+#  requirements: ( (OpSysAndVer =?= "CentOS7") || (OpSysAndVer =?= "CentOS8") )
+targetOutputFileSize: 2048

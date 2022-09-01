@@ -14,6 +14,7 @@ if __name__ == "__main__":
     parser.add_argument('--inFile', type=str)
     parser.add_argument('--outFile', type=str)
     parser.add_argument('--evtIds', type=str, default='')
+    parser.add_argument('--MaxEvents', type=int, default=10)
     parser.add_argument('--particleFile', type=str,
                         default=f"{os.environ['ANALYSIS_PATH']}/config/pdg_name_type_charge.txt")
     args = parser.parse_args()
@@ -31,5 +32,7 @@ if __name__ == "__main__":
         os.makedirs(outDir)
 
     df = ROOT.RDataFrame("Events", args.inFile)
+    if args.evtIds == '':
+        df=df.Range(args.MaxEvents)
     df = df.Define("GenPart_daughters", "GetDaughters(GenPart_genPartIdxMother)")
     PrintDecayChain(df, args.evtIds, args.outFile)

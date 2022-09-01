@@ -116,8 +116,8 @@ column_filters_for_failed:
 
 processing_module:
   file: NanoProd/skimNano.py
-  function: skim_B0B1
+  function: skim_B0B1_MET
 
 processing_module_for_failed:
   file: NanoProd/skimNano.py
-  function: skim_failed_B0B1
+  function: skim_failed_B0B1_MET
