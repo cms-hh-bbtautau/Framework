@@ -1,6 +1,10 @@
 cmsswPython: RunKit/nanoProdWrapper.py
 params:
+<<<<<<< HEAD
   customise: NanoProd/NanoProd/customize.customize
+=======
+  customise: Framework/NanoProd/customiseNano.customise
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc
   skimCfg: skim.yaml
   maxEvents: -1
 splitting: FileBased
@@ -13,6 +17,7 @@ filesToTransfer:
   - RunKit/nanoProdCrabJob.py
   - RunKit/skim_tree.py
   - RunKit/sh_tools.py
+<<<<<<< HEAD
   - NanoProd/data/skim.yaml
 site: T2_CH_CERN
 crabOutput: /store/user/vdamante/HH_bbtautau_resonant_Run2/nanoAOD_prod1
@@ -20,17 +25,50 @@ finalOutput: /eos/home-v/vdamante/HH_bbtautau_resonant_Run2/nanoAOD_prod1
 #crabOutput: /store/group/phys_tau/kandroso/DeepTau_v2p5_UL18_prod
 #finalOutput: /eos/cms/store/group/phys_tau/kandroso/DeepTau_v2p5_UL18
 localOutputPrefix: /eos/cms
+=======
+  - config/skim.yaml
+  - NanoProd/skimNano.py
+  - Common/BaselineSelection.py
+  - Common/AnalysisTools.h
+  - Common/BaselineGenSelection.h
+  - Common/BaselineRecoSelection.h
+  - Common/exception.h
+  - Common/GenStatusFlags.h
+  - Common/GenTools.h
+  - Common/HHCore.h
+  - Common/TextIO.h
+
+# Update destination site and paths before launching a production
+#site: T3_CH_CERNBOX
+#crabOutput: /store/user/kandroso/bbtt-prod
+#localCrabOutput: /eos/home-k/kandroso/bbtt-prod
+#finalOutput: /eos/home-p/kandroso/bbtt/nanoV10
+
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc
 maxMemory: 2500
 numCores: 1
 inputDBS: global
 allowNonValid: False
 dryrun: False
+<<<<<<< HEAD
 maxResubmitCount: 4
 maxRecoveryCount: 2
 updateInterval: 60
+=======
+maxResubmitCount: 2
+maxRecoveryCount: 2
+updateInterval: 60 # minutes
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc
 postProcessing:
   lawTask: CrabNanoProdTaskPostProcess
   workflow: htcondor
   bootstrap: bootstrap.sh
+<<<<<<< HEAD
 #  requirements: ( (OpSysAndVer =?= "CentOS7") || (OpSysAndVer =?= "CentOS8") )
 targetOutputFileSize: 2048
+=======
+postProcessingDoneFlag: post_processing_done.txt
+#  requirements: ( (OpSysAndVer =?= "CentOS7") || (OpSysAndVer =?= "CentOS8") )
+targetOutputFileSize: 2048 # MiB
+renewKerberosTicket: True
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc

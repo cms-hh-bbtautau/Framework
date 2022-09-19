@@ -1,6 +1,8 @@
 column_filters:
   - drop ^.*_cleanmask$
-  - drop ^Jet_btagDeep.*$
+  - drop Jet_btagDeepB
+  - drop Jet_btagDeepCvB
+  - drop Jet_btagDeepCvL
   - drop Jet_btagCSVV2
   - drop Jet_qgl
   - drop Jet_neEmEF
@@ -101,10 +103,19 @@ column_filters:
   - drop ^HLT_.*$
   - keep ^HLT_.*Tau.*$
   - keep ^HLT_PFMET.*$
-  - keep ^HLT_Iso(|Tk)Mu.*$
-  - keep ^HLT_Mu[0-9]+$
-  - keep ^HLT_Ele.*$
+  - keep ^HLT_PFHT.*$
+  - keep ^HLT_(|Iso|Old)(|Tk)Mu[1-9][0-9]+.*$
+  - keep ^HLT_Ele[1-9][0-9]+.*$
   - drop ^HLT_Ele.*CaloId.*$
+  - keep ^HLT_Ele[1-9][0-9]+.*CaloId.*PFJet.*$
+  - keep ^HLT_Photon[0-9]+_TwoProngs[0-9]+$
+  - keep ^HLT_Quad(|PF)Jet.*$
+  - keep ^HLT_MonoCentralPFJet.*$
+  - keep ^HLT_AK8PFJet[0-9]+.*BoostedDoubleB.*$
+  - keep ^HLT_Diphoton.*NoPixelVeto.*$
+  - drop ^HLT_Ele.*Ele.*$
+  - drop ^HLT_.*Tau3[mM]u.*$
+  - drop ^HLT_Mu.*(Ele|Mu|Jpsi|Upsilon|NoFilters|IP).*
   - drop ^.*_idx$
   - drop ^.*_p4$
   - drop ^.*_B[01](T|)$
@@ -113,6 +124,7 @@ column_filters_for_failed:
   - drop ^.*$
   - keep ^LHE_.*$
   - keep genWeight
+  - keep ^Pileup_(nPU|nTrueInt)$
 
 processing_module:
   file: NanoProd/skimNano.py

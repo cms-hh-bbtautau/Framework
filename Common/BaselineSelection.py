@@ -10,8 +10,9 @@ def Initialize():
     global initialized
     if not initialized:
         import os
-        header_path_Gen = f"{os.environ['ANALYSIS_PATH']}/Common/BaselineGenSelection.h"
-        header_path_Reco = f"{os.environ['ANALYSIS_PATH']}/Common/BaselineRecoSelection.h"
+        headers_dir = os.path.dirname(os.path.abspath(__file__))
+        header_path_Gen = os.path.join(headers_dir, "BaselineGenSelection.h")
+        header_path_Reco = os.path.join(headers_dir, "BaselineRecoSelection.h")
         ROOT.gInterpreter.Declare(f'#include "{header_path_Gen}"')
         ROOT.gInterpreter.Declare(f'#include "{header_path_Reco}"')
         initialized = True
@@ -114,7 +115,7 @@ def ApplyRecoBaseline0(df, apply_filter=True):
     """)
 
     df = df.Define("Tau_B0", f"""
-        Tau_pt > 18 && abs(Tau_eta) < 2.3 && abs(Tau_dz) < 0.2 && Tau_decayMode != 5 && Tau_decayMode != 6
+        Tau_pt > 15 && abs(Tau_eta) < 2.5 && abs(Tau_dz) < 0.2 && Tau_decayMode != 5 && Tau_decayMode != 6
         && (    (    Tau_idDeepTau2017v2p1VSe >= {WorkingPointsTauVSe.VVLoose}
                   && Tau_idDeepTau2017v2p1VSmu >= {WorkingPointsTauVSmu.VLoose}
                   && Tau_idDeepTau2017v2p1VSjet >= {WorkingPointsTauVSjet.VVVLoose} )
@@ -178,7 +179,7 @@ def ApplyRecoBaseline1(df, apply_filter=True):
     df = df.Define("Jet_B1T", "RemoveOverlaps(Jet_p4, Jet_B1, Lepton_p4_B0, 2, 0.5)")
     df = df.Define("FatJet_B1T", "RemoveOverlaps(FatJet_p4, FatJet_B1, Lepton_p4_B0, 2, 0.5)")
 
-    filter_expr = "Jet_idx[Jet_B1T].size() >= 2 || FatJet_idx[FatJet_B1T].size() >= 1"
+    filter_expr = "Jet_idx[Jet_B1T].size() >= 1 || FatJet_idx[FatJet_B1T].size() >= 1"
     if apply_filter:
         return df.Filter(filter_expr, "Reco Jet Acceptance")
     else:

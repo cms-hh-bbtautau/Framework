@@ -1,5 +1,6 @@
 GLOBAL:
-  period: '2018'
+  era: 'Run2_2018'
+
 GluGluToRadionToHHTo2B2Tau_M-250:
   miniAOD: /GluGluToRadionToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
@@ -21,8 +22,8 @@ GluGluToRadionToHHTo2B2Tau_M-280:
   sampleType: GluGluToRadion
   mass: 280
 GluGluToRadionToHHTo2B2Tau_M-300:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 300
 GluGluToRadionToHHTo2B2Tau_M-320:
@@ -36,8 +37,8 @@ GluGluToRadionToHHTo2B2Tau_M-350:
   sampleType: GluGluToRadion
   mass: 350
 GluGluToRadionToHHTo2B2Tau_M-400:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 400
 GluGluToRadionToHHTo2B2Tau_M-450:
@@ -56,8 +57,8 @@ GluGluToRadionToHHTo2B2Tau_M-550:
   sampleType: GluGluToRadion
   mass: 550
 GluGluToRadionToHHTo2B2Tau_M-600:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 600
 GluGluToRadionToHHTo2B2Tau_M-650:
@@ -66,8 +67,8 @@ GluGluToRadionToHHTo2B2Tau_M-650:
   sampleType: GluGluToRadion
   mass: 650
 GluGluToRadionToHHTo2B2Tau_M-700:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 700
 GluGluToRadionToHHTo2B2Tau_M-750:
@@ -91,8 +92,8 @@ GluGluToRadionToHHTo2B2Tau_M-900:
   sampleType: GluGluToRadion
   mass: 900
 GluGluToRadionToHHTo2B2Tau_M-1000:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 1000
 GluGluToRadionToHHTo2B2Tau_M-1250:
@@ -106,8 +107,8 @@ GluGluToRadionToHHTo2B2Tau_M-1500:
   sampleType: GluGluToRadion
   mass: 1500
 GluGluToRadionToHHTo2B2Tau_M-1750:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToRadion
   mass: 1750
 GluGluToRadionToHHTo2B2Tau_M-2000:
@@ -136,23 +137,23 @@ GluGluToBulkGravitonToHHTo2B2Tau_M-260:
   sampleType: GluGluToBulkGraviton
   mass: 260
 GluGluToBulkGravitonToHHTo2B2Tau_M-270:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 270
 GluGluToBulkGravitonToHHTo2B2Tau_M-280:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 280
 GluGluToBulkGravitonToHHTo2B2Tau_M-300:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 300
 GluGluToBulkGravitonToHHTo2B2Tau_M-320:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 320
 GluGluToBulkGravitonToHHTo2B2Tau_M-350:
@@ -161,8 +162,8 @@ GluGluToBulkGravitonToHHTo2B2Tau_M-350:
   sampleType: GluGluToBulkGraviton
   mass: 350
 GluGluToBulkGravitonToHHTo2B2Tau_M-400:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 400
 GluGluToBulkGravitonToHHTo2B2Tau_M-450:
@@ -171,8 +172,8 @@ GluGluToBulkGravitonToHHTo2B2Tau_M-450:
   sampleType: GluGluToBulkGraviton
   mass: 450
 GluGluToBulkGravitonToHHTo2B2Tau_M-500:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 500
 GluGluToBulkGravitonToHHTo2B2Tau_M-550:
@@ -181,13 +182,13 @@ GluGluToBulkGravitonToHHTo2B2Tau_M-550:
   sampleType: GluGluToBulkGraviton
   mass: 550
 GluGluToBulkGravitonToHHTo2B2Tau_M-600:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 600
 GluGluToBulkGravitonToHHTo2B2Tau_M-650:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 650
 GluGluToBulkGravitonToHHTo2B2Tau_M-700:
@@ -216,8 +217,8 @@ GluGluToBulkGravitonToHHTo2B2Tau_M-900:
   sampleType: GluGluToBulkGraviton
   mass: 900
 GluGluToBulkGravitonToHHTo2B2Tau_M-1000:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: GluGluToBulkGraviton
   mass: 1000
 GluGluToBulkGravitonToHHTo2B2Tau_M-1250:
@@ -499,62 +500,43 @@ VBFToBulkGravitonToHHTo2B2Tau_M-3000:
   mass: 3000
 DYJetsToLL_M-50:
   miniAOD: /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: DY
 DYJetsToLL_0J:
   miniAOD: /DYJetsToLL_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /DYJetsToLL_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_1J:
   miniAOD: /DYJetsToLL_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /DYJetsToLL_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_2J:
   miniAOD: /DYJetsToLL_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /DYJetsToLL_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-0To50:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-0To50_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-0To50_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-50To100:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-50To100_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-50To100_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-100To250:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-100To250_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-100To250_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-250To400:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-400To650:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-400To650_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-400To650_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
+  sampleType: DY
 DYJetsToLL_LHEFilterPtZ-650ToInf:
   miniAOD: /DYJetsToLL_LHEFilterPtZ-650ToInf_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /DYJetsToLL_LHEFilterPtZ-650ToInf_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
-DYJetsToLL_Pt-50To100:
-  miniAOD: /DYJetsToLL_Pt-50To100_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
-  nanoAOD: /DYJetsToLL_Pt-50To100_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
-DYJetsToLL_Pt-100To250:
-  miniAOD: /DYJetsToLL_Pt-100To250_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
-  nanoAOD: /DYJetsToLL_Pt-100To250_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
-DYJetsToLL_Pt-250To400:
-  miniAOD: /DYJetsToLL_Pt-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
-  nanoAOD: /DYJetsToLL_Pt-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
-DYJetsToLL_Pt-400To650:
-  miniAOD: /DYJetsToLL_Pt-400To650_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
-  nanoAOD: /DYJetsToLL_Pt-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY 
-DYJetsToLL_Pt-650ToInf:
-  miniAOD: /DYJetsToLL_Pt-650ToInf_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
-  nanoAOD: /DYJetsToLL_Pt-650ToInf_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: DY  
+  sampleType: DY
 EWKWMinus2Jets_WToLNu_M-50:
   miniAOD: /EWKWMinus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /EWKWMinus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
@@ -587,6 +569,14 @@ ST_tW_top_5f_inclusiveDecays:
   miniAOD: /ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: ST
+ST_tW_antitop_5f_NoFullyHadronicDecays:
+  nanoAOD: /ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  miniAOD: /ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  sampleType: ST
+ST_tW_top_5f_NoFullyHadronicDecays:
+  nanoAOD: /ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  miniAOD: /ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  sampleType: ST
 ST_t-channel_antitop_4f_InclusiveDecays:
   miniAOD: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
@@ -598,6 +588,22 @@ ST_t-channel_top_4f_InclusiveDecays:
 WJetsToLNu:
   miniAOD: /WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: W
+W1JetsToLNu:
+  nanoAOD: /W1JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  miniAOD: /W1JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  sampleType: W
+W2JetsToLNu:
+  nanoAOD: /W2JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  miniAOD: /W2JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  sampleType: W
+W3JetsToLNu:
+  nanoAOD: /W3JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  miniAOD: /W3JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  sampleType: W
+W4JetsToLNu:
+  nanoAOD: /W4JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  miniAOD: /W4JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   sampleType: W
 WJetsToLNu_HT-70To100:
   miniAOD: /WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
@@ -631,45 +637,63 @@ WJetsToLNu_HT-2500ToInf:
   miniAOD: /WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: W
+W_To_TauNu_M-200:
+  miniAOD: /WToTauNu_M-200_TuneCP5_13TeV-pythia8-tauola/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  nanoAOD: /WToTauNu_M-200_TuneCP5_13TeV-pythia8-tauola/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: W
+W_To_MuNu_M-200:
+  miniAOD: /WToMuNu_M-200_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
+  nanoAOD: /WToMuNu_M-200_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: W
 ZZ:
   miniAOD: /ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: ZZ
+  sampleType: VV
 ZZTo2Q2L:
   miniAOD: /ZZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /ZZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: ZZ
+  sampleType: VV
 ZZTo2Q2Nu:
   miniAOD: /ZZTo2Q2Nu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /ZZTo2Q2Nu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: ZZ
+  sampleType: VV
 ZZTo4Q:
-  miniAOD: /ZZTo4Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /ZZTo4Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
-  sampleType: ZZ
+  miniAOD: /ZZTo4Q_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /ZZTo4Q_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: VV
 ZZTo2L2Nu:
   miniAOD: /ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: ZZ
+  sampleType: VV
 ZZTo4L:
   miniAOD: /ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
-  sampleType: ZZ
+  sampleType: VV
 WW:
   miniAOD: /WW_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /WW_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
   sampleType: VV
 WWTo1L1Nu2Q:
+<<<<<<< HEAD
   miniAOD: /WWTo1L1Nu2Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v1/MINIAODSIM
   nanoAOD: /WWTo1L1Nu2Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+=======
+  miniAOD: /WWTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /WWTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc
   sampleType: VV
 WWTo2L2Nu:
   miniAOD: /WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   nanoAOD: /WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: VV
 WWTo4Q:
+<<<<<<< HEAD
   miniAOD: /WWTo4Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
   nanoAOD: /WWTo4Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v2/NANOAODSIM
+=======
+  miniAOD: /WWTo4Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v3/MINIAODSIM
+  nanoAOD: /WWTo4Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+>>>>>>> d126e36f49163ec78023e26d1b1fbad0549c6bdc
   sampleType: VV
 WZ:
   miniAOD: /WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
@@ -680,24 +704,44 @@ WZTo3LNu:
   nanoAOD: /WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
   sampleType: VV
 WZTo1L1Nu2Q:
-  miniAOD: /WZTo1L1Nu2Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM
-  nanoAOD: /WZTo1L1Nu2Q_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM
+  miniAOD: /WZTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /WZTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: VV
+WZTo2Q2L:
+  miniAOD: /WZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  nanoAOD: /WZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
   sampleType: VV
 WWW:
   miniAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
   sampleType: VVV
+WWW_ext:
+  miniAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/MINIAODSIM
+  nanoAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM
+  sampleType: VVV
 WWZ:
   miniAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: VVV
+WWZ_ext:
+  miniAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/MINIAODSIM
+  nanoAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM
   sampleType: VVV
 WZZ:
   miniAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v3/MINIAODSIM
   nanoAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
   sampleType: VVV
+WZZ_ext:
+  miniAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/MINIAODSIM
+  nanoAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM
+  sampleType: VVV
 ZZZ:
   miniAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: VVV
+ZZZ_ext:
+  miniAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/MINIAODSIM
+  nanoAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM
   sampleType: VVV
 ZHToTauTau:
   miniAOD: /ZHToTauTau_M125_CP5_13TeV-powheg-pythia8_ext1/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
@@ -755,79 +799,130 @@ TTWZ:
   miniAOD: /TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM
   nanoAOD: /TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
   sampleType: TTVV
-GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_7:
+
+GluGluToHHTo2B2Tau_node_SM:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_SM_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_1:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_1_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_2:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_2_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_3:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_3_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_4:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_4_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_5:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_5_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_6:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_6_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_7:
   miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_7_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_7_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: HHSM
-GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_10:
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_8:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_8_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_9:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_9_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_10:
   miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_10_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_10_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: HHSM
-GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_11:
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_11:
   miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_11_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
-  nanoAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_11_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
-  sampleType: HHSM
-SingleMuon_Run2018A-UL:
-  miniAOD: /SingleMuon/Run2018A-UL2018_MiniAODv2-v3/MINIAOD
+  sampleType: HHnonRes
+GluGluToHHTo2B2Tau_node_12:
+  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_12_13TeV-madgraph-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
+  sampleType: HHnonRes
+
+SingleMuon_2018A:
   nanoAOD: /SingleMuon/Run2018A-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /SingleMuon/Run2018A-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-SingleMuon_Run2018B-UL:
-  miniAOD: /SingleMuon/Run2018B-UL2018_MiniAODv2-v2/MINIAOD
+SingleMuon_2018B:
   nanoAOD: /SingleMuon/Run2018B-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /SingleMuon/Run2018B-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-SingleMuon_Run2018C-UL:
-  miniAOD: /SingleMuon/Run2018C-UL2018_MiniAODv2-v2/MINIAOD
+SingleMuon_2018C:
   nanoAOD: /SingleMuon/Run2018C-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /SingleMuon/Run2018C-UL2018_MiniAODv2_GT36-v2/MINIAOD
   sampleType: data
-SingleMuon_Run2018D-UL:
-  miniAOD: /SingleMuon/Run2018D-UL2018_MiniAODv2-v3/MINIAOD
+SingleMuon_2018D:
   nanoAOD: /SingleMuon/Run2018D-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /SingleMuon/Run2018D-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-EGamma_Run2018A-UL:
-  miniAOD: /EGamma/Run2018A-UL2018_MiniAODv2-v1/MINIAOD
+
+EGamma_2018A:
   nanoAOD: /EGamma/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /EGamma/Run2018A-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-EGamma_Run2018B-UL:
-  miniAOD: /EGamma/Run2018B-UL2018_MiniAODv2-v1/MINIAOD
+EGamma_2018B:
   nanoAOD: /EGamma/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /EGamma/Run2018B-UL2018_MiniAODv2-v1/MINIAOD
   sampleType: data
-EGamma_Run2018C-UL:
-  miniAOD: /EGamma/Run2018C-UL2018_MiniAODv2-v1/MINIAOD
+EGamma_2018C:
   nanoAOD: /EGamma/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /EGamma/Run2018C-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-EGamma_Run2018D-UL:
-  miniAOD: /EGamma/Run2018D-UL2018_MiniAODv2-v2/MINIAOD
+EGamma_2018D:
   nanoAOD: /EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD
+  miniAOD: /EGamma/Run2018D-UL2018_MiniAODv2-v2/MINIAOD
   sampleType: data
-Tau_Run2018A-UL:
-  miniAOD: /Tau/Run2018A-UL2018_MiniAODv2-v1/MINIAOD
+
+Tau_2018A:
   nanoAOD: /Tau/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /Tau/Run2018A-UL2018_MiniAODv2-v1/MINIAOD
   sampleType: data
-Tau_Run2018B-UL:
-  miniAOD: /Tau/Run2018B-UL2018_MiniAODv2-v2/MINIAOD
+Tau_2018B:
   nanoAOD: /Tau/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /Tau/Run2018B-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-Tau_Run2018C-UL:
-  miniAOD: /Tau/Run2018C-UL2018_MiniAODv2-v1/MINIAOD
+Tau_2018C:
   nanoAOD: /Tau/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /Tau/Run2018C-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-Tau_Run2018D-UL:
-  miniAOD: /Tau/Run2018D-UL2018_MiniAODv2-v1/MINIAOD
+Tau_2018D:
   nanoAOD: /Tau/Run2018D-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /Tau/Run2018D-UL2018_MiniAODv2-v1/MINIAOD
   sampleType: data
-MET_Run2018A-UL:
-  miniAOD: /MET/Run2018A-UL2018_MiniAODv2-v2/MINIAOD
+  miniAOD_ignoreFiles:
+    - /store/data/Run2018D/Tau/MINIAOD/UL2018_MiniAODv2-v1/240000/85725A5B-F5E3-7A44-BDBD-7812E48A9733.root
+
+MET_2018A:
   nanoAOD: /MET/Run2018A-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /MET/Run2018A-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-MET_Run2018B-UL:
-  miniAOD: /MET/Run2018B-UL2018_MiniAODv2-v2/MINIAOD
+MET_2018B:
   nanoAOD: /MET/Run2018B-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /MET/Run2018B-UL2018_MiniAODv2_GT36-v1/MINIAOD
   sampleType: data
-MET_Run2018C-UL:
-  miniAOD: /MET/Run2018C-UL2018_MiniAODv2-v1/MINIAOD
+MET_2018C:
   nanoAOD: /MET/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /MET/Run2018C-UL2018_MiniAODv2-v1/MINIAOD
   sampleType: data
-MET_Run2018D-UL:
-  miniAOD: /MET/Run2018D-UL2018_MiniAODv2-v1/MINIAOD
+MET_2018D:
   nanoAOD: /MET/Run2018D-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /MET/Run2018D-UL2018_MiniAODv2-v1/MINIAOD
+  sampleType: data
+
+JetHT_2018A:
+  nanoAOD: /JetHT/Run2018A-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /JetHT/Run2018A-UL2018_MiniAODv2_GT36-v1/MINIAOD
+  sampleType: data
+JetHT_2018B:
+  nanoAOD: /JetHT/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /JetHT/Run2018B-UL2018_MiniAODv2_GT36-v1/MINIAOD
+  sampleType: data
+JetHT_2018C:
+  nanoAOD: /JetHT/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  miniAOD: /JetHT/Run2018C-UL2018_MiniAODv2_GT36-v1/MINIAOD
+  sampleType: data
+JetHT_2018D:
+  nanoAOD: /JetHT/Run2018D-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  miniAOD: /JetHT/Run2018D-UL2018_MiniAODv2-v2/MINIAOD
   sampleType: data

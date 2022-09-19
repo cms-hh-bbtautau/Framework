@@ -19,3 +19,5 @@ Studies/Visual
 /FrameworkJobReport.xml
 /*.root
 /nano_NANO.py
+/crab
+/.crabOverseer

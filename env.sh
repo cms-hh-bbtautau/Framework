@@ -59,6 +59,7 @@ action() {
         run_cmd eval `scramv1 runtime -sh`
         run_cmd cd "$this_dir"
     fi
+    mkdir -p "$ANALYSIS_DATA_PATH"
     export PATH="$this_dir/soft/CentOS$os_version/bin:$PATH"
     source /afs/cern.ch/user/m/mrieger/public/law_sw/setup.sh
     source "$( law completion )"
