@@ -32,11 +32,32 @@ defaultColToSave = ["event","luminosityBlock","run", "sample_type", "period", "X
                 "DeepMETResolutionTune_pt", "DeepMETResolutionTune_phi","DeepMETResponseTune_pt", "DeepMETResponseTune_phi",
                 "MET_covXX", "MET_covXY", "MET_covYY", "PV_npvs"]
 
+class DataFrameWrapper:
+    def __init__(self, df):
+        self.df = df
+        self.colToSave = copy.deepcopy(defaultColToSave)
 
+    def Define(self, varToDefine, varToCall):
+        self.df = self.df.Define(f"{varToDefine}", f"{varToCall}")
+
+    def DefineAndAppend(self, varToDefine, varToCall):
+        self.Define(varToDefine, varToCall)
+        self.colToSave.append(varToDefine)
+
+    def Apply(self, func, *args, **kwargs):
+        result = func(self.df, *args, **kwargs)
+        if isinstance(result, tuple):
+            self.df = result[0]
+            if len(result) == 2:
+                return result[1]
+            return result[1:]
+        else:
+            self.df = result
 
 def addAllVariables(dfw, syst_name, isData, trigger_class):
     dfw.Apply(Baseline.SelectRecoP4, syst_name)
     dfw.Apply(Baseline.RecoLeptonsSelection)
+    dfw.Apply(Baseline.RecoJetAcceptance)
     dfw.Apply(Baseline.RecoHttCandidateSelection, config["GLOBAL"])
     dfw.Apply(Baseline.RecoJetSelection)
     dfw.Apply(Baseline.RequestOnlyResolvedRecoJets)
@@ -147,12 +168,11 @@ def createAnatuple(inFile, outFile, config, sample_name, snapshotOptions,range, 
         if not is_central and not compute_unc_variations: continue
         suffix = '' if is_central else f'_{syst_name}'
         if len(suffix) and not store_noncentral: continue
-        dfw = Utilities.DataFrameWrapper(df)
+        dfw = DataFrameWrapper(df)
         addAllVariables(dfw, syst_name, isData, trigger_class)
         if not isData:
             weight_branches = dfw.Apply(Corrections.getNormalisationCorrections, config, sample_name, is_central and compute_unc_variations)
             weight_branches.extend(dfw.Apply(Corrections.trg.getTrgSF, trigger_class.trigger_dict.keys(), is_central and compute_unc_variations))
-            weight_branches.extend(dfw.Apply(Corrections.btag.getSF,is_central and compute_unc_variations))
             dfw.colToSave.extend(weight_branches)
         report = dfw.df.Report()
         histReport = ReportTools.SaveReport(report.GetValue(), reoprtName=f"Report{suffix}")

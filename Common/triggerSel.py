@@ -27,8 +27,6 @@ class Triggers():
             additional_conditions = [""]
             total_objects_matched = []
             for leg_id, leg_tuple in enumerate(path_dict['legs']):
-                if 'ref_leg' in leg_tuple:
-                    leg_tuple = path_dict['legs'][leg_tuple['ref_leg']]
                 leg_dict_offline= leg_tuple["offline_obj"]
                 type_name_offline = leg_dict_offline["type"]
                 var_name_offline = f'{type_name_offline}_offlineCut_{leg_id+1}_{path}'
@@ -41,14 +39,7 @@ class Triggers():
                     df = df.Define(f'{type_name_offline}_{var_name_offline}_sel', f'httCand.isLeg({type_name_offline}_idx, {self.dict_legtypes[type_name_offline]}) && ({var_name_offline})')
                     leg_dict_online= leg_tuple["online_obj"]
                     var_name_online =  f'{leg_dict_offline["type"]}_onlineCut_{leg_id+1}_{path}'
-                    cut_vars = []
-                    cuts = leg_dict_online["cuts"] if "cuts" in leg_dict_online else [ { "cut" : leg_dict_online["cut"] } ]
-                    for cut_idx, online_cut in enumerate(cuts):
-                        preCondition = online_cut.get('preCondition', 'true')
-                        cut_var_name =  f'{leg_dict_offline["type"]}_onlineCut_{leg_id+1}_{path}_{cut_idx}'
-                        df = df.Define(cut_var_name, f"!({preCondition}) || ({preCondition}) && ({online_cut['cut']})")
-                        cut_vars.append(cut_var_name)
-                    df = df.Define(var_name_online, ' && '.join(cut_vars))
+                    df = df.Define(f'{var_name_online}',f'{leg_dict_online["cut"]}')
                     matching_var = f'{leg_dict_offline["type"]}_Matching_{leg_id+1}_{path}'
 
                     df = df.Define(matching_var, f"""FindMatchingSet( {type_name_offline}_{var_name_offline}_sel,{var_name_online},

@@ -13,12 +13,14 @@ ditau:
         type: Tau
         cut: v_ops::pt(Tau_p4) > 40 && abs(v_ops::eta(Tau_p4)) < 2.1
       online_obj:
-        cuts:
-          - cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0
-          - cut: (  ( (TrigObj_filterBits&4)!=0 && (TrigObj_filterBits&16)!=0 ) || ( TrigObj_pt > 40 && ( (TrigObj_filterBits&2)!=0 && (TrigObj_filterBits&16)!=0 ) || (TrigObj_filterBits&4)!=0 ) )
-            preCondition: isData && run<317509
+        cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0
       doMatching: True
-    - ref_leg: 0
+    - offline_obj:
+        type: Tau
+        cut: v_ops::pt(Tau_p4) > 40 && abs(v_ops::eta(Tau_p4)) < 2.1
+      online_obj:
+        cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0 # for charged iso? and for HPS ??
+      doMatching: True
 MET:
     channels:
       - tauTau
@@ -72,15 +74,15 @@ mutau:
   legs:
     - offline_obj:
         type: Muon
-        cut: v_ops::pt(Muon_p4) > 22 && abs(v_ops::eta(Muon_p4)) < 2.1
+        cut: v_ops::pt(Muon_p4) > 21 && abs(v_ops::eta(Muon_p4)) < 2.1
       online_obj:
-        cut: TrigObj_id==13 && (TrigObj_filterBits&64)!=0
+        cut: TrigObj_id == 13 && (TrigObj_filterBits&512)!=0
       doMatching: True
     - offline_obj:
         type: Tau
         cut: v_ops::pt(Tau_p4) > 32 && abs(v_ops::eta(Tau_p4)) < 2.1
       online_obj:
-        cut: TrigObj_id == 15 && (TrigObj_filterBits&512)!=0  && TrigObj_pt>27
+        cut: TrigObj_id == 15 && (TrigObj_filterBits&1)!=0 && (TrigObj_filterBits&512)!=0
       doMatching: True
 
 
@@ -111,13 +113,13 @@ etau:
   legs:
     - offline_obj:
         type: Electron
-        cut: v_ops::pt(Electron_p4) > 26 && abs(v_ops::eta(Electron_p4)) < 2.1
+        cut: v_ops::pt(Electron_p4) > 25 && abs(v_ops::eta(Electron_p4)) < 2.1
       online_obj:
-        cut: TrigObj_id == 11 &&(TrigObj_filterBits&64)!=0
+        cut: TrigObj_id == 11 && (TrigObj_filterBits&256)!=0
       doMatching: True
     - offline_obj:
         type: Tau
         cut: v_ops::pt(Tau_p4) > 35 && abs(v_ops::eta(Tau_p4)) < 2.1
       online_obj:
-        cut:  TrigObj_id==15 && (TrigObj_filterBits&256)!=0
+        cut: TrigObj_id == 15 && (TrigObj_filterBits&256)!=0
       doMatching: True
