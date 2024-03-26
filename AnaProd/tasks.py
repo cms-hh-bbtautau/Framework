@@ -20,12 +20,13 @@ def load_unc_config(unc_cfg):
     return unc_cfg_dict
 
 class AnaCacheTask(Task, HTCondorWorkflow, law.LocalWorkflow):
-    max_runtime = copy_param(HTCondorWorkflow.max_runtime, 2.0)
+    max_runtime = copy_param(HTCondorWorkflow.max_runtime, 10.0)
 
     def create_branch_map(self):
         n = 0
         branches = {}
         for sample_name in sorted(self.samples.keys()):
+            #print(sample_name)
             isData = self.samples[sample_name]['sampleType'] == 'data'
             branches[n] = (sample_name, isData)
             n += 1
@@ -33,7 +34,7 @@ class AnaCacheTask(Task, HTCondorWorkflow, law.LocalWorkflow):
 
     def output(self):
         sample_name, isData = self.branch_data
-        outDir = os.path.join(self.central_anaCache_path(), sample_name, self.version)
+        outDir = os.path.join(self.central_anaCache_path(), sample_name)
         if not os.path.exists(outDir):
             os.makedirs(outDir)
         sample_out = os.path.join(outDir, 'anaCache.yaml')
@@ -47,8 +48,9 @@ class AnaCacheTask(Task, HTCondorWorkflow, law.LocalWorkflow):
         else:
             producer = os.path.join(self.ana_path(), 'AnaProd', 'anaCacheProducer.py')
             inDir = os.path.join(self.central_nanoAOD_path(), sample_name)
-            if self.period!='Run2_2018':
-             inDir = os.path.join(self.central_nanoAOD_path_HLepRare(), sample_name)
+            #if self.period!='Run2_2018':
+            if self.version.split('_')[-1]=='HTT':
+                inDir = os.path.join(self.central_nanoAOD_path_HLepRare(), sample_name)
             os.makedirs(os.path.dirname(self.output().path), exist_ok=True)
             sh_call(['python3', producer, '--config', self.sample_config, '--inDir', inDir, '--sample', sample_name,
                     '--outFile', self.output().path, '--customisations', self.customisations ], env=self.cmssw_env())
@@ -76,7 +78,8 @@ class InputFileTask(Task, law.LocalWorkflow):
         os.makedirs(os.path.join(self.local_path(),sample_name), exist_ok=True)
         txtFile_tmp = os.path.join(self.local_path(), sample_name, "tmp.txt")
         inDir = os.path.join(self.central_nanoAOD_path(), sample_name)
-        if self.period!='Run2_2018':
+        #if self.period!='Run2_2018':
+        if self.version.split('_')[-1]=='HTT':
             inDir = os.path.join(self.central_nanoAOD_path_HLepRare(), sample_name)
         #print(f"inDir is {inDir}")
         input_files = []
@@ -112,6 +115,7 @@ class AnaTupleTask(Task, HTCondorWorkflow, law.LocalWorkflow):
             inputFileTxt = InputFileTask.req(self, branch=sample_id,workflow='local', branches=(sample_id,)).output().path
             with open(inputFileTxt, 'r') as inputtxtFile:
                 input_files = inputtxtFile.read().splitlines()
+            #print(input_files)
             if len(input_files) == 0:
                 raise RuntimeError(f"AnaTupleTask: no input files found for {sample_name}")
             for input_file in input_files:
@@ -137,7 +141,7 @@ class AnaTupleTask(Task, HTCondorWorkflow, law.LocalWorkflow):
             sample_id, sample_name, sample_type, input_file = self.branch_data
             if self.test: print(f"sample_id= {sample_id}\nsample_name = {sample_name}\nsample_type = {sample_type}\ninput_file = {input_file}")
             producer_anatuples = os.path.join(self.ana_path(), 'AnaProd', 'anaTupleProducer.py')
-            anaCache = os.path.join(self.central_anaCache_path(), sample_name, self.version, 'anaCache.yaml')
+            anaCache = os.path.join(self.central_anaCache_path(), sample_name, 'anaCache.yaml')
             outdir_anatuples = os.path.join(job_home, 'anaTuples', sample_name)
             anatuple_cmd = [ 'python3', producer_anatuples, '--config', self.sample_config, '--inFile', input_file,
                         '--outDir', outdir_anatuples, '--sample', sample_name, '--anaCache', anaCache, '--customisations',
@@ -286,7 +290,7 @@ class AnaCacheTupleTask(Task, HTCondorWorkflow, law.LocalWorkflow):
             fileName_list = os.path.basename(input_file).split('.')
             #print(fileName_list)
             fileName = fileName_list[0]
-            print(fileName)
+            #print(fileName)
             #print(f"filename is {fileName}")
             sample_config = self.sample_config
             unc_config = os.path.join(os.getenv("ANALYSIS_PATH"), 'config', 'weight_definition.yaml')

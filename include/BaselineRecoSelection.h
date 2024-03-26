@@ -185,7 +185,16 @@ std::optional<HbbCand> GetHbbCandidate(const RVecF& HHbTagScores, const RVecB& J
   }
   return std::nullopt;
 }
-
+template<size_t N>
+LorentzVectorM GetMetNoMu(const HTTCand<N>& HttCandidate, const LorentzVectorM& Met_p4) {
+  LorentzVectorM Muon_p4_sig(0.,0.,0.,0.);
+  for (size_t leg_idx = 0 ; leg_idx < HttCandidate.n_legs ; leg_idx++){
+    if(HttCandidate.leg_type[leg_idx] == Leg::mu){
+      Muon_p4_sig+=HttCandidate.leg_p4[leg_idx];
+    }
+  }
+  return Met_p4+Muon_p4_sig;
+}
 
 using LegIndexPair = std::pair<Leg, size_t>;
 using LegMatching = std::pair<Leg, RVecSetInt>;

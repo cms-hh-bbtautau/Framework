@@ -12,6 +12,8 @@ QCDregions = ['OS_Iso', 'SS_Iso', 'OS_AntiIso', 'SS_AntiIso']
 categories = ['res2b', 'res1b', 'inclusive', 'boosted', 'btag_shape','baseline']
 gen_channels = {'eTau':[3,5], 'muTau':[4,5], 'tauTau':[5,5]}
 channels = {'eTau':13, 'muTau':23, 'tauTau':33}
+triggers = {'eTau':  'HLT_singleTau || HLT_singleEle || HLT_etau || HLT_MET' , 'muTau': 'HLT_singleTau || HLT_singleMu || HLT_mutau || HLT_MET', 'tauTau' : 'HLT_singleTau || HLT_ditau || HLT_MET' }
+channels = {'eTau':13, 'muTau':23, 'tauTau':33}
 '''
 triggers = {
     'eTau':  '(HLT_singleTau || HLT_singleEle || HLT_etau || HLT_MET)' ,
@@ -53,12 +55,15 @@ filters = {
         }
 
 
-def createKeyFilterDict():
+def createKeyFilterDict(sample_cfg_dict):
     reg_dict = {}
     filter_str = ""
-    for ch in channels:
-        for reg in QCDregions:
-            for cat in categories:
+    channels_to_consider = sample_cfg_dict['channelSelection']
+    qcd_regions_to_consider = sample_cfg_dict['QCDRegions']
+    categories_to_consider = sample_cfg_dict["categories"]
+    for ch in channels_to_consider:
+        for reg in qcd_regions_to_consider:
+            for cat in categories_to_consider:
                 filter_base = f"{ch} && {triggers[ch]} && {reg} && {cat}"
                 if cat =='boosted' :
                     filter_str =  filter_base
@@ -209,21 +214,16 @@ def ApplyBTagWeight(cat,applyBtag=True, finalWeight_name = 'final_weight_0'):
 
 
 def GetWeight(channel, cat):
-
+    weights_to_apply = ["weight_MC_Lumi_pu", "weight_L1PreFiring_Central","weight_L1PreFiring_ECAL_Central","weight_L1PreFiring_Muon_Central"]
     trg_weights_dict = {
         'eTau':["weight_tau1_TrgSF_singleEle_Central","weight_tau2_TrgSF_singleEle_Central", "weight_tau1_TrgSF_etau_Central", "weight_tau2_TrgSF_etau_Central"],
         'muTau':["weight_tau1_TrgSF_singleMu_Central","weight_tau2_TrgSF_singleMu_Central", "weight_tau1_TrgSF_mutau_Central", "weight_tau2_TrgSF_mutau_Central"],
         'tauTau':["weight_tau1_TrgSF_ditau_Central","weight_tau2_TrgSF_ditau_Central"]
         }
-    '''
-
-    trg_weights_dict = {
-        'eTau':["weight_tau1_TrgSF_singleEle_Central","weight_tau2_TrgSF_singleEle_Central"],
-        'muTau':["weight_tau1_TrgSF_singleMu_Central","weight_tau2_TrgSF_singleMu_Central"],
-        'tauTau':["weight_tau1_TrgSF_ditau_Central","weight_tau2_TrgSF_ditau_Central"]
-        }
-    '''
-    weights_to_apply = [ "weight_TauID_Central", "weight_tau1_EleidSF_Central", "weight_tau1_MuidSF_Central", "weight_tau2_EleidSF_Central", "weight_tau2_MuidSF_Central","weight_total", "weight_L1PreFiring_Central","weight_L1PreFiring_ECAL_Central"]
+    tau_weights =["EleSF_EleIDCentral", "HighPt_MuonID_SF_HighPtIDCentral", "HighPt_MuonID_SF_HighPtIdRelTkIsoCentral", "HighPt_MuonID_SF_RecoCentral", "HighPt_MuonID_SF_TightIDCentral", "MuonID_SF_HighPtID_TrkCentral", "MuonID_SF_HighPtIdRelTkIsoCentral", "MuonID_SF_RecoCentral", "MuonID_SF_TightID_TrkCentral", "MuonID_SF_TightRelIsoCentral", "TauID_SF_Central", "TauID_SF_TauID_genuineElectron_barrelCentral", "TauID_SF_TauID_genuineElectron_endcapsCentral", "TauID_SF_TauID_genuineMuon_eta0p4to0p8Central", "TauID_SF_TauID_genuineMuon_eta0p8to1p2Central", "TauID_SF_TauID_genuineMuon_eta1p2to1p7Central", "TauID_SF_TauID_genuineMuon_etaGt1p7Central", "TauID_SF_TauID_genuineMuon_etaLt0p4Central", "TauID_SF_stat1_dm0Central", "TauID_SF_stat1_dm10Central", "TauID_SF_stat1_dm11Central", "TauID_SF_stat1_dm1Central", "TauID_SF_stat2_dm0Central", "TauID_SF_stat2_dm10Central", "TauID_SF_stat2_dm11Central", "TauID_SF_stat2_dm1Central", "TauID_SF_syst_allerasCentral", "TauID_SF_syst_yearCentral", "TauID_SF_syst_year_dm0Central", "TauID_SF_syst_year_dm10Central", "TauID_SF_syst_year_dm11Central", "TauID_SF_syst_year_dm1Central", "TauID_SF_totalCentral"]
+    for tau_suffix in tau_weights:
+        for tau_idx in [1,2]:
+            weights_to_apply.append(f"weight_tau{tau_idx}_{tau_suffix}")
     if cat != 'boosted':
          weights_to_apply.extend(["weight_Jet_PUJetID_Central_b1", "weight_Jet_PUJetID_Central_b2"])
     weights_to_apply.extend(trg_weights_dict[channel])
@@ -282,6 +282,8 @@ class DataFrameBuilder(DataFrameBuilderBase):
     def defineChannels(self):
         for channel,ch_value in channels.items():
             self.df = self.df.Define(f"{channel}", f"channelId=={ch_value}")
+            if 'genchannelId' in self.df.GetColumnNames():
+                self.df = self.df.Define(f"gen_{channel}", f"genchannelId=={ch_value}")
         '''
         for gen_channel,gen_ch_value in gen_channels.items():
             if f"tau1_gen_kind" in self.df.GetColumnNames() and f"tau2_gen_kind" in self.df.GetColumnNames():
@@ -311,7 +313,9 @@ class DataFrameBuilder(DataFrameBuilderBase):
         #print(self.deepTauVersion)
         tau2_iso_var = f"tau2_idDeepTau{self.deepTauYear()}{self.deepTauVersion}VSjet"
         self.df = self.df.Define("OS", "tau1_charge*tau2_charge < 0")
-        self.df = self.df.Define("Iso", f"{tau2_iso_var} >= {Utilities.WorkingPointsTauVSjet.Medium.value}")
+        self.df = self.df.Define("Iso", f"{tau2_iso_var} >= {Utilities.WorkingPointsTauVSjet.VLoose.value}")
+        #self.df = self.df.Define("Iso", f"{tau2_iso_var} >= {Utilities.WorkingPointsTauVSjet.Loose.value}")
+        #self.df = self.df.Define("Iso", f"{tau2_iso_var} >= {Utilities.WorkingPointsTauVSjet.Medium.value}")
         self.df = self.df.Define("AntiIso", f"{tau2_iso_var} >= {Utilities.WorkingPointsTauVSjet.VVVLoose.value} && !Iso")
         self.df = self.df.Define("OS_Iso", f"OS && Iso")
         self.df = self.df.Define("SS_Iso", f"!OS && Iso")

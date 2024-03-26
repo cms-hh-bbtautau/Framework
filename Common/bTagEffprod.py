@@ -36,13 +36,18 @@ def bTagProdEff(inDir, config, sample_name, range, evtIds):
     df = df.Define("period", f"static_cast<int>(Period::{period})")
     df = df.Define("X_mass", f"static_cast<int>({mass})")
 
+
     df = Baseline.CreateRecoP4(df)
     df = Baseline.DefineGenObjects(df, isData=False, isHH=isHH)
     dfw = Utilities.DataFrameWrapper(df)
+
     dfw.Apply(Baseline.SelectRecoP4, 'nano')
-    dfw.Apply(Baseline.RecoLeptonsSelection)
+    #dfw.Apply(Baseline.DefineMETCuts,80, ["MET", "DeepMETResolutionTune", "DeepMETResponseTune", "PuppiMET"])
+
     dfw.Apply(Baseline.RecoHttCandidateSelection, config["GLOBAL"])
     dfw.Apply(Baseline.RecoJetSelection)
+    #dfw.Apply(Baseline.ThirdLeptonVeto)
+
     df = dfw.df
     pt_bins = Utilities.ListToVector([20,25,30,35,40,50,60,70,80,100,150,200,300,500,1000], "double")
     eta_bins = Utilities.ListToVector([0,0.6,1.2,2.1,2.5], "double")

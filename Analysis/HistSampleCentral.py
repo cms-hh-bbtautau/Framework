@@ -122,7 +122,7 @@ if __name__ == "__main__":
     outfile  = ROOT.TFile(finalFileName,'RECREATE')
 
     sample_type = sample_cfg_dict[args.dataset]['sampleType'] if args.dataset != 'data' else 'data'
-    key_filter_dict = createKeyFilterDict()
+    key_filter_dict = createKeyFilterDict(sample_cfg_dict['GLOBAL'])
 
     dfWrapped_central = DataFrameBuilder(ROOT.RDataFrame('Events',f'{args.inDir}/*.root'), args.deepTauVersion)
     #print("df wrapped central created")

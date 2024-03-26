@@ -156,59 +156,6 @@ def GetShapeDataFrameDict(all_dataframes, key, key_central, inFile, inFileCache,
         if not all_dataframes[key]:
             all_dataframes.pop(key)
 
-'''
-def GetHistograms(var, inFile,dataset,outfile,unc_cfg_dict, sample_cfg_dict, deepTauVersion, compute_unc_variations, compute_rel_weights, furtherCut='', wantBTag=False,want2D=False):
-    sample_type = sample_cfg_dict[dataset]['sampleType'] if dataset != 'data' else 'data'
-    key_central = (sample_type, "Central", "Central")
-
-    all_dataframes = {}
-    all_histograms = {}
-    key_filter_dict = createKeyFilterDict()
-
-    # central hist definition
-    dfWrapped_central = dfWrapped_central = DataFrameBuilder(ROOT.RDataFrame('Events', inFile), deepTauVersion)
-
-    col_names_central =  dfWrapped_central.colNames
-    col_tpyes_central =  dfWrapped_central.colTypes
-    if key_central not in all_dataframes:
-        all_dataframes[key_central] = [PrepareDfWrapped(dfWrapped_central).df]
-    central_histograms = GetHistogramDictFromDataframes(var, all_dataframes, key_central , key_filter_dict, unc_cfg_dict['norm'],hist_cfg_dict, wantBTag,want2D,furtherCut)
-    # central quantities definition
-    #compute_variations = ( compute_unc_variations or compute_rel_weights ) and dataset != 'data'
-    if  compute_unc_variations and dataset != 'data':
-        print(compute_unc_variations)
-        all_dataframes[key_central][0] = createCentralQuantities(all_dataframes[key_central][0], col_tpyes_central, col_names_central)
-        if all_dataframes[key_central][0].Filter("map_placeholder > 0").Count().GetValue() <= 0 : raise RuntimeError("no events passed map placeolder")
-
-    # norm weight histograms
-    if compute_rel_weights and dataset!='data':
-        for uncName in unc_cfg_dict['norm'].keys():
-            for scale in scales:
-                key_2 = (sample_type, uncName, scale)
-                if key_2 not in all_dataframes.keys():
-                    all_dataframes[key_2] = []
-                all_dataframes[key_2] = all_dataframes[key_central]
-                print(key_2, all_dataframes[key_2])
-                norm_histograms =  GetHistogramDictFromDataframes(var,all_dataframes, key_2, key_filter_dict,unc_cfg_dict['norm'], hist_cfg_dict, wantBTag,want2D,furtherCut)
-                central_histograms.update(norm_histograms)
-
-    # save histograms
-    SaveHists(central_histograms, outfile)
-
-    # shape weight  histograms
-    if compute_unc_variations and dataset!='data':
-        for uncName in unc_cfg_dict['shape']:
-            for scale in scales:
-                key_2 = (sample_type, uncName, scale)
-                GetShapeDataFrameDict(all_dataframes, key_2, key_central, inFile, compute_variations, deepTauVersion, col_names_central, col_tpyes_central )
-                shape_histograms=  GetHistogramDictFromDataframes(var, all_dataframes, key_2 , key_filter_dict,unc_cfg_dict['shape'], hist_cfg_dict, wantBTag,want2D, furtherCut)
-                SaveHists(shape_histograms, outfile)
-
-    #for dataframe_key in all_dataframes.keys():
-    #    for dataframe in all_dataframes[dataframe_key]:
-    #        print(dataframe_key)
-    #        print(dataframe.GetNRuns())
-'''
 
 if __name__ == "__main__":
     import argparse
@@ -268,7 +215,7 @@ if __name__ == "__main__":
 
     all_dataframes = {}
     all_histograms = {}
-    key_filter_dict = createKeyFilterDict()
+    key_filter_dict = createKeyFilterDict(sample_cfg_dict['GENERAL'])
 
     # central hist definition
     #dfWrapped_central = dfWrapped_central = DataFrameBuilder(ROOT.RDataFrame('Events', inFile), deepTauVersion)

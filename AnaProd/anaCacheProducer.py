@@ -16,7 +16,7 @@ from Corrections.pu import *
 def createAnaCache(inDir, outFile, global_params, isData, range=None, verbose=1):
     start_time = datetime.datetime.now()
     Baseline.Initialize(False, False)
-    Corrections.Initialize(config=global_params, isData=isData,  load_corr_lib=True, load_pu=True, load_tau=False, load_trg=False, load_btag=False, loadBTagEff=False, load_met=False, load_mu = False, load_ele=False, load_puJetID=False, load_jet=False)
+    Corrections.Initialize(config=global_params, isData=isData,  load_corr_lib=True, load_pu=True, load_tau=False, load_trg=False, load_btag=False, loadBTagEff=False, load_met=False, load_mu = False, load_ele=False, load_puJetID=False, load_jet=False,load_fatjet=False)
 
     if os.path.exists(args.outFile):
         with open(args.outFile, 'r') as file:
@@ -66,4 +66,5 @@ if __name__ == "__main__":
         Utilities.ApplyConfigCustomisations(config['GLOBAL'], args.customisations)
     print(config[args.sample]['sampleType'])
     isData = True if config[args.sample]['sampleType'] == 'data' else False
+    print(isData)
     createAnaCache(args.inDir, args.outFile, config['GLOBAL'],isData, range=args.nEvents)

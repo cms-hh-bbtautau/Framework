@@ -11,8 +11,8 @@ ditau:
         cut: v_ops::pt(Tau_p4) > 40 && abs(v_ops::eta(Tau_p4)) < 2.1
       online_obj:
         cuts:
-          - cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0
-          - cut: (  ( (TrigObj_filterBits&4)!=0 && (TrigObj_filterBits&16)!=0 ) || ( TrigObj_pt > 40 && ( (TrigObj_filterBits&2)!=0 && (TrigObj_filterBits&16)!=0 ) || (TrigObj_filterBits&4)!=0 ) )
+          - cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0 && ( ( (TrigObj_filterBits&4)!=0 && (TrigObj_filterBits&16)!=0 ) || ( TrigObj_pt > 40 && ( (TrigObj_filterBits&2)!=0 && (TrigObj_filterBits&16)!=0 ) || (TrigObj_filterBits&4)!=0 ) )
+          #- cut: TrigObj_id == 15 && (TrigObj_filterBits&64)!=0 && (( (TrigObj_filterBits&4)!=0 && (TrigObj_filterBits&8)!=0 ) || ( TrigObj_pt > 40 && ( (TrigObj_filterBits&2)!=0 && (TrigObj_filterBits&8)!=0 ) || (TrigObj_filterBits&4)!=0 ) )
       doMatching: True
     - ref_leg: 0
 MET:
@@ -82,7 +82,10 @@ singleEle:
     - eTau
     - eE
     - eMu
-  path:
+  path_data:
+    - HLT_Ele32_WPTight_Gsf && run >= 302026
+    - HLT_Ele32_WPTight_Gsf_L1DoubleEG && run< 302026
+  path_MC:
     - HLT_Ele32_WPTight_Gsf
     #- HLT_Ele35_WPTight_Gsf ? understand
   legs:
@@ -91,6 +94,7 @@ singleEle:
         cut: v_ops::pt(Electron_p4) > 34 && abs(v_ops::eta(Electron_p4)) < 2.5
       online_obj:
         cut: TrigObj_id == 11 && (TrigObj_filterBits&2)!=0
+        cut:  (run >= 302026 || (run< 302026 && (TrigObj_filterBits&10)!=0 ))
       doMatching: True
 
 etau:

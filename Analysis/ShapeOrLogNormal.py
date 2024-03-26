@@ -14,10 +14,10 @@ def GetHisto(channel, category, inFileName, inDir, sample_name, uncSource, scale
     inFile = ROOT.TFile(os.path.join(inDir, inFileName),"READ")
     dir_0 = inFile.Get(channel)
     dir_1 = dir_0.Get(category)
-    print(channel, category)
+    #print(channel, category)
     total_histName = sample_name
-    print([str(key.GetName()) for key in inFile.GetListOfKeys()])
-    print([str(key.GetName()) for key in dir_0.GetListOfKeys()])
+    #print([str(key.GetName()) for key in inFile.GetListOfKeys()])
+    #print([str(key.GetName()) for key in dir_0.GetListOfKeys()])
     #print([str(key.GetName()) for key in dir_1.GetListOfKeys()])
     if uncSource != 'Central':
         total_histName += f'_{uncSource}{scale}'
@@ -53,7 +53,7 @@ def constant_function(x,par):
 def GetChi2(histogram):
     fit_func = ROOT.TF1("fit_func", constant_function, 0, 10, 1)
     fit_func.SetParameter(0, 1.0)
-    histogram.Fit(fit_func)
+    histogram.Fit(fit_func, "q")
     chi2 = fit_func.GetChisquare()
     ndf = fit_func.GetNDF()
     p_value = ROOT.TMath.Prob(chi2, ndf)
@@ -176,8 +176,8 @@ if __name__ == "__main__":
             inDir = os.path.join(args.histDir, 'all_histograms',args.var,btag_dir)
             #print(inDir)
             inFileName_Central=f'{args.inFileName}_{args.var}_Central{args.suffix}.root'
-            print(inFileName_Central)
-            print(os.path.join(inDir,inFileName))
+            #print(inFileName_Central)
+            #print(os.path.join(inDir,inFileName))
             if not os.path.exists(os.path.join(inDir,inFileName)): continue
             #inFileName_Central=f'{args.inFileName}_{args.var}_Central{args.suffix}.root'
             sample_name = sample
@@ -185,7 +185,7 @@ if __name__ == "__main__":
                 for category in ['inclusive','res2b','res1b','boosted']:
                     #if category=='boosted': continue
                     if category == 'boosted' and uncSource in unc_to_not_consider_boosted: continue
-                    print(channel, category, uncSource, sample_name)
+                    #print(channel, category, uncSource, sample_name)
 
                     hist_central,hist_up_ratio,hist_up,hist_down_ratio,hist_down = GetShiftedRatios(channel, category, inFileName_Central, inDir, sample_name,uncSource)
                     GetChi2Method(hist_central,hist_up_ratio,hist_up,hist_down_ratio,hist_down, sample_name, channel, category, uncSource, unc_dict)

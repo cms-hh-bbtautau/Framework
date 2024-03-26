@@ -21,6 +21,7 @@ def ListToVector(list, type="string"):
 
 col_type_dict = {
   'Float_t':'float',
+  #'Double_t':'double',
   'Bool_t':'bool',
   'Int_t' :'int',
   'ULong64_t' :'unsigned long long',

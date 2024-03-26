@@ -14,6 +14,18 @@ ST_t-channel_antitop:
   crossSec: 69.09
   reference: XSDB ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8 modifiedOn 2020-10-10 11:39:14
   unc: 0.4613
+DY_LO_M-10to50:
+  crossSec: 15810.0
+  reference: XSDB DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-07-16 14:49:00
+  unc: 5.764
+WGToLNuG:
+  crossSec: 412.7
+  ref: XSDB WGToLNuG_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 09:59:47
+  unc: 1.027
+EWK_ZTo2Nu:
+  crossSec: 10.65
+  reference: XSDB EWKZ2Jets_ZToNuNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8 modifiedOn 2022-03-02 06:36:09
+  unc: 0.008396
 EWKWMinus2Jets_WToLNu_M-50:
   crossSec: 32.05
   reference: XSDB EWKWMinus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8 modifiedOn 2021-06-21 09:27:47
@@ -114,6 +126,19 @@ W4JetsToLNu_LO:
   crossSec: 544.3
   reference: XSDB W4JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2018-07-10 12:51:40
   unc: 1.656
+
+W0JetsToLNu_NLO:
+  crossSec: 52780.0
+  reference: XSDB WJetsToLNu_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2023-02-13 12:26:27
+  unc: 221.2
+W1JetsToLNu_NLO:
+  crossSec: 8832.0
+  reference: XSDB WJetsToLNu_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2023-02-13 12:26:27
+  unc: 162.2
+W2JetsToLNu_NLO:
+  crossSec: 3276.0
+  reference: XSDB WJetsToLNu_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2023-02-13 12:26:28
+  unc: 99.01
 WJetsToLNu_HT-70To100_LO:
   crossSec: 1264.0
   reference: XSDB WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 10:00:11
@@ -174,10 +199,14 @@ ZZTo4Q:
   crossSec:  3.302 #6.912 <-- previous value. The new one has been evaluated on many MiniAOD
   reference: from GenXSecAnalyzer /ZZTo4Q_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
   unc: 6.328e-03
+WZTo1L3Nu:
+  crossSec: 3.414
+  reference: XSDB  WZTo1L3Nu_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2023-02-13 12:27:18
+  unc: 0.0366
 WZTo3LNu:
   crossSec: 5.213
   reference: XSDB WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2021-06-21 10:01:07
-  unc:
+  unc: 0.01618
 WZTo1L1Nu2Q:
   crossSec: 10.71
   reference: from GenXSecAnalyzer /WZTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM
@@ -202,11 +231,11 @@ WZZ:
   crossSec: 0.05709
   reference: XSDB WZZ_TuneCP5_13TeV-amcatnlo-pythia8 modifiedOn 2021-06-21 10:01:13
   unc: 6.213e-05
-WWW:
+WWW_4F:
   crossSec: 0.2158
   reference: XSDB WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8 modifiedOn 2021-06-21 10:00:48
   unc: 0.0002479
-WWZ:
+WWZ_4F:
   crossSec: 0.1707
   reference: XSDB WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8 modifiedOn 2021-06-21 10:00:50
   unc: 0.0001757
@@ -218,6 +247,10 @@ ZH_HToBB_ZToQQ:
   crossSec: ( 0.69911)*0.5824*0.8839
   reference: Higgs_XSBR_YR4_update https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV
   unc:
+ggHToZZTo2L2Q:
+  crossSec: 28.87
+  ref: XSDB GluGluHToZZTo2L2Q_M125_TuneCP5_13TeV_powheg2_JHUGenV7011_pythia8 modifiedOn 2022-03-02 06:36:47
+  unc: 0.02027
 ZHToTauTau:
   crossSec: 0.06272*0.8839
   reference: Higgs_XSBR_YR4_update https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV
@@ -258,6 +291,31 @@ ggHH_bbTauTau_SM:
   crossSec: 1
   reference:
   unc:
+
+GluGluHToWWTo2L2Nu:
+  crossSec: 21.47
+  ref: XSDB GluGluHToWWTo2L2Nu_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8 modifiedOn 2021-10-11 11:23:02
+  unc: 0.01033
+VBFHToWWTo2L2Nu:
+  crossSec: 3.892
+  ref: XSDB VBFHToWWTo2L2Nu_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8 modifiedOn 2021-10-11 11:26:47
+  unc: 0.01575
+HWplusJ_HToWW:
+  crossSec: 0.872
+  ref: XSDB HWplusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8 modifiedOn 2022-03-02 06:40:30
+  unc: 0.0006877
+HWminusJ_HToWW:
+  crossSec: 0.5445
+  ref: XSDB HWminusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8 modifiedOn 2022-03-02 06:40:29
+  unc: 0.0004197
+HZJ_HToWW:
+  crossSec: 0.9595
+  ref: XSDB HZJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8 modifiedOn 2022-03-02 06:40:32
+  unc: 0.1618
+GluGluZH_HToWW_ZTo2L:
+  crossSec: 0.006185
+  ref: XSDB GluGluZH_HToWW_ZTo2L_M-125_TuneCP5_13TeV-powheg-pythia8 modifiedOn 2021-10-11 11:23:32
+  unc: 6.763e-06
 TTZToBB:
   crossSec: 0.1118
   reference: XSDB TTZToBB_TuneCP5_13TeV-amcatnlo-pythia8 modifiedOn 2020-10-10 11:41:16
@@ -518,6 +576,26 @@ DY_NNLO:
     crossSec: 6077.22
     reference: XSDB DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2019-10-11 14:36:12
     unc: 2%
+DY_LO:
+    crossSec: 5398.0
+    reference: XSDB DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 09:27:15
+    unc: 13.12
+DY_LO_1J:
+  crossSec: 928.3
+  reference: XSDB DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 09:26:40
+  unc: 2.54
+DY_LO_2J:
+  crossSec: 293.6
+  reference: XSDB DY2JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-10-11 11:22:53
+  unc: 0.8613
+DY_LO_3J:
+  crossSec: 86.53
+  reference: XSDB DY3JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 09:26:51
+  unc: 0.2633
+DY_LO_4J:
+  crossSec: 41.28
+  reference: XSDB DY4JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8 modifiedOn 2021-06-21 09:26:51
+  unc: 0.1267
 DY_NLO:
     crossSec: 6404.0
     reference: XSDB DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8 modifiedOn 2021-06-21 09:27:12

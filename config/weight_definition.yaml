@@ -1,50 +1,118 @@
 norm:
+  EleID:
+    expression: weight_tau1_EleSF_EleID{scale}_rel * weight_tau2_EleSF_EleID{scale}_rel * final_weight
+  HighPtMuon_HighPtID:
+    expression: weight_tau1_HighPt_MuonID_SF_HighPtID{scale}_rel * weight_tau2_HighPt_MuonID_SF_HighPtID{scale}_rel * final_weight
+  HighPtMuon_HighPtIDIso:
+    expression: weight_tau1_HighPt_MuonID_SF_HighPtIdRelTkIso{scale}_rel * weight_tau2_HighPt_MuonID_SF_HighPtIdRelTkIso{scale}_rel * final_weight
+  HighPtMuon_Reco:
+    expression: weight_tau1_HighPt_MuonID_SF_Reco{scale}_rel * weight_tau2_HighPt_MuonID_SF_Reco{scale}_rel * final_weight
+  HighPtMuon_TightID:
+    expression: weight_tau1_HighPt_MuonID_SF_TightID{scale}_rel * weight_tau2_HighPt_MuonID_SF_TightID{scale}_rel * final_weight
+  Muon_HighPtID:
+    expression: weight_tau1_MuonID_SF_HighPtID_Trk{scale}_rel * weight_tau2_MuonID_SF_HighPtID_Trk{scale}_rel * final_weight
+  MuonID_HighPtIso:
+    expression: weight_tau1_MuonID_SF_HighPtIdRelTkIso{scale}_rel * weight_tau2_MuonID_SF_HighPtIdRelTkIso{scale}_rel * final_weight
+  MuonID_Reco:
+    expression: weight_tau1_MuonID_SF_Reco{scale}_rel * weight_tau2_MuonID_SF_Reco{scale}_rel * final_weight
+  MuonID_TightID:
+    expression: weight_tau1_MuonID_SF_TightID_Trk{scale}_rel * weight_tau2_MuonID_SF_TightID_Trk{scale}_rel * final_weight
+  MuonID_TightIDIso:
+    expression: weight_tau1_MuonID_SF_TightRelIso{scale}_rel * weight_tau2_MuonID_SF_TightRelIso{scale}_rel * final_weight
   TauID_total:
-    expression : weight_TauID_total{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_total{scale}_rel * weight_tau2_TauID_SF_total{scale}_rel * final_weight
   TauID_stat1_DM0:
-    expression: weight_TauID_stat1_dm0{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat1_dm0{scale}_rel * weight_tau2_TauID_SF_stat1_dm0{scale}_rel * final_weight
   TauID_stat1_DM10:
-    expression: weight_TauID_stat1_dm10{scale}_rel * final_weight
-  TauID_stat1_DM1:
-    expression: weight_TauID_stat1_dm1{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat1_dm10{scale}_rel * weight_tau2_TauID_SF_stat1_dm10{scale}_rel * final_weight
   TauID_stat1_DM11:
-    expression: weight_TauID_stat1_dm11{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat1_dm11{scale}_rel * weight_tau2_TauID_SF_stat1_dm11{scale}_rel * final_weight
+  TauID_stat1_DM1:
+    expression: weight_tau1_TauID_SF_stat1_dm1{scale}_rel * weight_tau2_TauID_SF_stat1_dm1{scale}_rel * final_weight
   TauID_stat2_DM0:
-    expression: weight_TauID_stat2_dm0{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat2_dm0{scale}_rel * weight_tau2_TauID_SF_stat2_dm0{scale}_rel * final_weight
   TauID_stat2_DM10:
-    expression: weight_TauID_stat2_dm10{scale}_rel * final_weight
-  TauID_stat2_DM1:
-    expression: weight_TauID_stat2_dm1{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat2_dm10{scale}_rel * weight_tau2_TauID_SF_stat2_dm10{scale}_rel * final_weight
   TauID_stat2_DM11:
-    expression: weight_TauID_stat2_dm11{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_stat2_dm11{scale}_rel * weight_tau2_TauID_SF_stat2_dm11{scale}_rel * final_weight
+  TauID_stat2_DM1:
+    expression: weight_tau1_TauID_SF_stat2_dm1{scale}_rel * weight_tau2_TauID_SF_stat2_dm1{scale}_rel * final_weight
   TauID_syst_alleras:
-    expression: weight_TauID_syst_alleras{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_syst_alleras{scale}_rel * weight_tau2_TauID_SF_syst_alleras{scale}_rel * final_weight
   TauID_syst_year:
-    expression: weight_TauID_syst_year{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_syst_year{scale}_rel * weight_tau2_TauID_SF_syst_year{scale}_rel * final_weight
   TauID_syst_year_DM0:
-    expression: weight_TauID_syst_year_dm0{scale}_rel * final_weight
-  TauID_syst_year_DM1:
-    expression: weight_TauID_syst_year_dm1{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_syst_year_dm0{scale}_rel * weight_tau2_TauID_SF_syst_year_dm0{scale}_rel * final_weight
   TauID_syst_year_DM10:
-    expression: weight_TauID_syst_year_dm10{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_syst_year_dm10{scale}_rel * weight_tau2_TauID_SF_syst_year_dm10{scale}_rel * final_weight
   TauID_syst_year_DM11:
-    expression: weight_TauID_syst_year_dm11{scale}_rel * final_weight
-  TauID_genuineMuon_etaLt0p4:
-    expression: weight_TauID_TauID_genuineMuon_etaLt0p4{scale}_rel * final_weight
-  TauID_genuineMuon_eta0p4to0p8:
-    expression: weight_TauID_TauID_genuineMuon_eta0p4to0p8{scale}_rel * final_weight
-  TauID_genuineMuon_eta0p8to1p2:
-    expression: weight_TauID_TauID_genuineMuon_eta0p8to1p2{scale}_rel * final_weight
-  TauID_genuineMuon_eta1p2to1p7:
-    expression: weight_TauID_TauID_genuineMuon_eta1p2to1p7{scale}_rel * final_weight
-  TauID_genuineMuon_etaGt1p7:
-    expression: weight_TauID_TauID_genuineMuon_etaGt1p7{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_syst_year_dm11{scale}_rel * weight_tau2_TauID_SF_syst_year_dm11{scale}_rel * final_weight
+  TauID_syst_year_DM1:
+    expression: weight_tau1_TauID_SF_syst_year_dm1{scale}_rel * weight_tau2_TauID_SF_syst_year_dm1{scale}_rel * final_weight
   TauID_genuineElectron_barrel:
-    expression: weight_TauID_TauID_genuineElectron_barrel{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_TauID_genuineElectron_barrel{scale}_rel * weight_tau2_TauID_SF_TauID_genuineElectron_barrel{scale}_rel * final_weight
   TauID_genuineElectron_endcaps:
-    expression: weight_TauID_TauID_genuineElectron_endcaps{scale}_rel * final_weight
-  TauID_total:
-    expression: weight_TauID_total{scale}_rel * final_weight
+    expression: weight_tau1_TauID_SF_TauID_genuineElectron_endcaps{scale}_rel * weight_tau2_TauID_SF_TauID_genuineElectron_endcaps{scale}_rel * final_weight
+  TauID_genuineMuon_eta0p4to0p8:
+    expression: weight_tau1_TauID_SF_TauID_genuineMuon_eta0p4to0p8{scale}_rel * weight_tau2_TauID_SF_TauID_genuineMuon_eta0p4to0p8{scale}_rel * final_weight
+  TauID_genuineMuon_eta0p8to1p2:
+    expression: weight_tau1_TauID_SF_TauID_genuineMuon_eta0p8to1p2{scale}_rel * weight_tau2_TauID_SF_TauID_genuineMuon_eta0p8to1p2{scale}_rel * final_weight
+  TauID_genuineMuon_eta1p2to1p7:
+    expression: weight_tau1_TauID_SF_TauID_genuineMuon_eta1p2to1p7{scale}_rel * weight_tau2_TauID_SF_TauID_genuineMuon_eta1p2to1p7{scale}_rel * final_weight
+  TauID_genuineMuon_etaGt1p7:
+    expression: weight_tau1_TauID_SF_TauID_genuineMuon_etaGt1p7{scale}_rel * weight_tau2_TauID_SF_TauID_genuineMuon_etaGt1p7{scale}_rel * final_weight
+  TauID_genuineMuon_etaLt0p4:
+    expression: weight_tau1_TauID_SF_TauID_genuineMuon_etaLt0p4{scale}_rel * weight_tau2_TauID_SF_TauID_genuineMuon_etaLt0p4{scale}_rel * final_weight
+  TrigSF_diTau_DM0:
+    expression: weight_tau1_TrgSF_ditau_DM0{scale}_rel * weight_tau2_TrgSF_ditau_DM0{scale}_rel * final_weight
+  TrigSF_diTau_DM1:
+    expression: weight_tau1_TrgSF_ditau_DM1{scale}_rel * weight_tau2_TrgSF_ditau_DM1{scale}_rel * final_weight
+  TrigSF_diTau_3Prong:
+    expression: weight_tau1_TrgSF_ditau_3Prong{scale}_rel * weight_tau2_TrgSF_ditau_3Prong{scale}_rel * final_weight
+  TrigSF_singleEle:
+    expression: weight_tau1_TrgSF_singleEle{scale}_rel * weight_tau2_TrgSF_singleEle{scale}_rel * final_weight
+  TrigSF_singleMu:
+    expression: weight_tau1_TrgSF_singleMu24{scale}_rel * weight_tau2_TrgSF_singleMu24{scale}_rel * final_weight
+  TrigSF_singleMu50:
+    expression: weight_tau1_TrgSF_singleMu50{scale}_rel * weight_tau2_TrgSF_singleMu50{scale}_rel * final_weight
+  TrigSF_eTau_Ele:
+    expression: weight_tau1_TrgSF_etau_ele{scale}_rel * weight_tau2_TrgSF_etau_ele{scale}_rel * final_weight
+  TrigSF_eTau_DM0:
+    expression: weight_tau1_TrgSF_etau_DM0{scale}_rel * weight_tau2_TrgSF_etau_DM0{scale}_rel * final_weight
+  TrigSF_eTau_DM1:
+    expression: weight_tau1_TrgSF_etau_DM1{scale}_rel * weight_tau2_TrgSF_etau_DM1{scale}_rel * final_weight
+  TrigSF_eTau_3Prong:
+    expression: weight_tau1_TrgSF_etau_3Prong{scale}_rel * weight_tau2_TrgSF_etau_3Prong{scale}_rel * final_weight
+  TrigSF_muTau_Mu:
+    expression: weight_tau1_TrgSF_mutau_mu{scale}_rel * weight_tau2_TrgSF_mutau_mu{scale}_rel * final_weight
+  TrigSF_muTau_DM0:
+    expression: weight_tau1_TrgSF_mutau_DM0{scale}_rel * weight_tau2_TrgSF_mutau_DM0{scale}_rel * final_weight
+  TrigSF_muTau_DM1:
+    expression: weight_tau1_TrgSF_mutau_DM1{scale}_rel * weight_tau2_TrgSF_mutau_DM1{scale}_rel * final_weight
+  TrigSF_muTau_3Prong:
+    expression: weight_tau1_TrgSF_mutau_3Prong{scale}_rel * weight_tau2_TrgSF_mutau_3Prong{scale}_rel * final_weight
+  TrgSF_etau_3Prong:
+  expression: weight_tau1_TrgSF_etau_3Prong{scale}_rel * weight_tau2_TrgSF_etau_3Prong{scale}_rel * final_weight
+  TrgSF_etau_DM0:
+    expression: weight_tau1_TrgSF_etau_DM0{scale}_rel * weight_tau2_TrgSF_etau_DM0{scale}_rel * final_weight
+  TrgSF_etau_DM1:
+    expression: weight_tau1_TrgSF_etau_DM1{scale}_rel * weight_tau2_TrgSF_etau_DM1{scale}_rel * final_weight
+  TrgSF_etau_ele:
+    expression: weight_tau1_TrgSF_etau_ele{scale}_rel * weight_tau2_TrgSF_etau_ele{scale}_rel * final_weight
+  TrgSF_mutau_3Prong:
+    expression: weight_tau1_TrgSF_mutau_3Prong{scale}_rel * weight_tau2_TrgSF_mutau_3Prong{scale}_rel * final_weight
+  TrgSF_mutau_DM0:
+    expression: weight_tau1_TrgSF_mutau_DM0{scale}_rel * weight_tau2_TrgSF_mutau_DM0{scale}_rel * final_weight
+  TrgSF_mutau_DM1:
+    expression: weight_tau1_TrgSF_mutau_DM1{scale}_rel * weight_tau2_TrgSF_mutau_DM1{scale}_rel * final_weight
+  TrgSF_mutau_mu:
+    expression: weight_tau1_TrgSF_mutau_mu{scale}_rel * weight_tau2_TrgSF_mutau_mu{scale}_rel * final_weight
+  TrgSF_singleEle:
+    expression: weight_tau1_TrgSF_singleEle{scale}_rel * weight_tau2_TrgSF_singleEle{scale}_rel * final_weight
+  TrgSF_singleMu24:
+    expression: weight_tau1_TrgSF_singleMu24{scale}_rel * weight_tau2_TrgSF_singleMu24{scale}_rel * final_weight
+  TrgSF_singleTau:
+    expression: weight_tau1_TrgSF_singleTau{scale}_rel * weight_tau2_TrgSF_singleTau{scale}_rel * final_weight
   bTagSF_Loose_btagSFbc_correlated:
     expression: weight_bTagSF_Loose_btagSFbc_correlated{scale}_rel * final_weight
     requires_btag: True
@@ -107,52 +175,18 @@ norm:
     requires_btag: False
   PUJetID:
     expression: weight_Jet_PUJetID_eff{scale}_rel_b1 * weight_Jet_PUJetID_eff{scale}_rel_b2 * final_weight
-  PileUp:
-    expression: weight_pu{scale}_rel * final_weight
-  EleID:
-    expression: weight_tau1_EleidSF_{scale}_rel * weight_tau2_EleidSF_{scale}_rel * final_weight
-  MuID_TightRelIso:
-    expression: weight_tau1_MuidSF_TightRelIso{scale}_rel * weight_tau2_MuidSF_TightRelIso{scale}_rel * final_weight
-  MuID_TightID:
-    expression: weight_tau1_MuidSF_TightID{scale}_rel * weight_tau2_MuidSF_TightID{scale}_rel * final_weight
-  TrigSF_diTau_DM0:
-    expression: weight_tau1_TrgSF_ditau_DM0{scale}_rel * weight_tau2_TrgSF_ditau_DM0{scale}_rel * final_weight
-  TrigSF_diTau_DM1:
-    expression: weight_tau1_TrgSF_ditau_DM1{scale}_rel * weight_tau2_TrgSF_ditau_DM1{scale}_rel * final_weight
-  TrigSF_diTau_3Prong:
-    expression: weight_tau1_TrgSF_ditau_3Prong{scale}_rel * weight_tau1_TrgSF_ditau_3Prong{scale}_rel * final_weight
-  TrigSF_singleEle:
-    expression: weight_tau1_TrgSF_singleEle{scale}_rel * weight_tau2_TrgSF_singleEle{scale}_rel * final_weight
-  TrigSF_singleMu:
-    expression: weight_tau1_TrgSF_singleMu24{scale}_rel * weight_tau2_TrgSF_singleMu24{scale}_rel * final_weight
-  TrigSF_singleMu50:
-    expression: weight_tau1_TrgSF_singleMu50{scale}_rel * weight_tau2_TrgSF_singleMu50{scale}_rel * final_weight
-  TrigSF_eTau_Ele:
-    expression: weight_tau1_TrgSF_etau_ele{scale}_rel * weight_tau2_TrgSF_etau_ele{scale}_rel * final_weight
-  TrigSF_eTau_DM0:
-    expression: weight_tau1_TrgSF_etau_DM0{scale}_rel * weight_tau2_TrgSF_etau_DM0{scale}_rel * final_weight
-  TrigSF_eTau_DM1:
-    expression: weight_tau1_TrgSF_etau_DM1{scale}_rel * weight_tau2_TrgSF_etau_DM1{scale}_rel * final_weight
-  TrigSF_eTau_3Prong:
-    expression: weight_tau1_TrgSF_etau_3Prong{scale}_rel * weight_tau2_TrgSF_etau_3Prong{scale}_rel * final_weight
-  TrigSF_muTau_Mu:
-    expression: weight_tau1_TrgSF_mutau_mu{scale}_rel * weight_tau2_TrgSF_mutau_mu{scale}_rel * final_weight
-  TrigSF_muTau_DM0:
-    expression: weight_tau1_TrgSF_mutau_DM0{scale}_rel * weight_tau2_TrgSF_mutau_DM0{scale}_rel * final_weight
-  TrigSF_muTau_DM1:
-    expression: weight_tau1_TrgSF_mutau_DM1{scale}_rel * weight_tau2_TrgSF_mutau_DM1{scale}_rel * final_weight
-  TrigSF_muTau_3Prong:
-    expression: weight_tau1_TrgSF_mutau_3Prong{scale}_rel * weight_tau2_TrgSF_mutau_3Prong{scale}_rel * final_weight
+  PileUp_Lumi_MC:
+    expression: weight_MC_Lumi_pu{scale}_rel  * final_weight
   #TrigSF_singleTau:
   #  expression: weight_tau1_TrgSF_singleTau{scale}_rel * weight_tau2_TrgSF_singleTau{scale}_rel * final_weight
-  #L1Prefiring:
-  #  expression: weight_L1Prefiring{scale}_rel * final_weight
-  #L1Prefiring_ECAL:
-  #  expression: weight_L1Prefiring_ECAL{scale}_rel * final_weight
-  #L1Prefiring_Muon_Stat:
-  #  expression: weight_L1Prefiring_Muon_Stat{scale}_rel * final_weight
-  #L1Prefiring_Muon_Syst:
-  #  expression: weight_L1Prefiring_Muon_Syst{scale}_rel * final_weight
+  L1Prefiring:
+    expression: weight_L1Prefiring{scale}_rel * final_weight
+  L1Prefiring_ECAL:
+    expression: weight_L1Prefiring_ECAL{scale}_rel * final_weight
+  L1Prefiring_Muon_Stat:
+    expression: weight_L1Prefiring_Muon_Stat{scale}_rel * final_weight
+  L1Prefiring_Muon_Syst:
+    expression: weight_L1Prefiring_Muon_Syst{scale}_rel * final_weight
 shape:
   - TauES_DM0
   - TauES_DM1
