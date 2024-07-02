@@ -108,21 +108,18 @@ def createAnatuple(inFile, treeName, outDir, setup, sample_name, anaCache, snaps
                 dfw.DefineAndAppend("weight_L1PreFiring_Muon_SystUp_rel", "L1PreFiringWeight_Muon_SystUp/L1PreFiringWeight_Muon_Nom")
         if not isData:
             weight_branches = dfw.Apply(corrections.getNormalisationCorrections, setup.global_params,
-                                        setup.samples, sample_name, lepton_legs,
+                                        setup.samples, sample_name, lepton_legs,trigger_class.trigger_dict.keys(),
                                         return_variations=is_central and compute_unc_variations, isCentral=is_central,
                                         ana_cache=anaCache)
-            if 'trg' in corrections.to_apply:
-                weight_branches.extend(dfw.Apply(corrections.trg.getTrgSF, trigger_class.trigger_dict.keys(), lepton_legs,
-                                             is_central and compute_unc_variations, is_central))
-            if 'btag' in corrections.to_apply:
-                SF_branches_core,SF_weight_jes=dfw.Apply(corrections.jet.getBtagShapeSFs, syst_name, is_central,
-                                                     compute_unc_variations)
-                syst_name_selected = 'Central' if SF_weight_jes=="" else syst_name
-                SF_branches_core.remove(f'weight_bTagShapeSF_Central')
-                weight_name = f'weight_bTagShapeSF_{syst_name_selected}'
-                dfw.df = SelectBTagShapeSF(dfw.df, weight_name)
-                if is_central: weight_branches.extend(SF_branches_core)
-                weight_branches.extend([f'weight_bTagShapeSF'])
+            #if 'btagShape' in corrections.to_apply:
+            #    SF_branches_core,SF_weight_jes=dfw.Apply(corrections.jet.getBtagShapeSFs, syst_name, is_central,
+                                                     #compute_unc_variations)
+            #    syst_name_selected = 'Central' if SF_weight_jes=="" else syst_name
+            #    SF_branches_core.remove(f'weight_bTagShapeSF_Central')
+            #    weight_name = f'weight_bTagShapeSF_{syst_name_selected}'
+            #    dfw.df = SelectBTagShapeSF(dfw.df, weight_name)
+            #    if is_central: weight_branches.extend(SF_branches_core)
+            #    weight_branches.extend([f'weight_bTagShapeSF'])
             puIDbranches = ["weight_Jet_PUJetID_Central_tmp", "weight_Jet_PUJetID_effUp_rel_tmp", "weight_Jet_PUJetID_effDown_rel_tmp"]
             for puIDbranch in puIDbranches:
                 if puIDbranch in dfw.df.GetColumnNames():

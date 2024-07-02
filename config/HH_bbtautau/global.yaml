@@ -2,8 +2,8 @@ anaTupleDef: AnaProd/HH_bbtautau/anaTupleDef.py
 signal_types:
   - GluGluToRadion
   - GluGluToBulkGraviton
-  - VBFToRadion
-  - VBFToBulkGraviton
+  #- VBFToRadion
+  #- VBFToBulkGraviton
 genuineTau_SFtype:
   eTau: dm
   muTau: dm
@@ -20,13 +20,18 @@ deepTauWPs:
   tauTau:
     VSe: VVLoose
     VSmu: Tight
-    VSjet: Medium
+    VSjet: Loose
 corrections:
   - tauID
   - tauES
-  - JEC_JER
+  - JEC
+  - JER
   - trg
-  - btag
+  - btagWP
+  - btagShape
+  - mu
+  - ele
+  - puJetID
   - pu
 deepTauVersion: 2p1
 channelSelection:

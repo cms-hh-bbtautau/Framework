@@ -1,0 +1,244 @@
+DYJetsToLL_M-50-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_0J-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_1J-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_2J-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-0To50-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-50To100-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-100To250-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-250To400-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-400To650-amcatnloFXFX:
+  sampleType: DY
+DYJetsToLL_LHEFilterPtZ-650ToInf-amcatnloFXFX:
+  sampleType: DY
+
+WW:
+  sampleType: VV
+#WWTo1L1Nu2Q:
+#  sampleType: VV
+#WWTo2L2Nu:
+#  sampleType: VV
+#WWTo4Q:
+#  sampleType: VV
+WZ:
+  sampleType: VV
+#WZTo1L1Nu2Q:
+#  sampleType: VV
+#WZTo2Q2L:
+#  sampleType: VV
+#WZTo3LNu:
+#  sampleType: VV
+#WZTo1L3Nu:
+#  sampleType: VV
+
+ZZ:
+  sampleType: VV
+#ZZTo2L2Nu:
+#  sampleType: VV
+#ZZTo2Q2L:
+#  sampleType: VV
+#ZZTo2Q2Nu:
+#  sampleType: VV
+#ZZTo4L:
+#  sampleType: VV
+#ZZTo4Q:
+#  sampleType: VV
+
+ZH_Hbb_Zll:
+  sampleType: VH
+ZH_Hbb_Zqq:
+  sampleType: VH
+ggHToZZTo2L2Q:
+  sampleType: H
+
+GluGluHToTauTau_M125:
+  sampleType: H
+VBFHToTauTau_M125:
+  sampleType: H
+WplusHToTauTau_M125:
+  sampleType: VH
+WminusHToTauTau_M125:
+  sampleType: VH
+ZHToTauTau_M125:
+  sampleType: VH
+  hasExt1: True
+
+GluGluHToWWTo2L2Nu_M125:
+  sampleType: H
+VBFHToWWTo2L2Nu_M125:
+  sampleType: H
+HWplusJ_HToWW_M125:
+  sampleType: VH
+HWminusJ_HToWW_M125:
+  sampleType: VH
+HZJ_HToWW_M125:
+  sampleType: VH
+  hasExt1: True
+GluGluZH_HToWW_ZTo2L_M125:
+  sampleType: VH
+  hasExt1: True
+
+#ttHToNonbb_M125:
+#  sampleType: ttH
+#ttHTobb_M125:
+#  sampleType: ttH
+ttHToTauTau_M125:
+  sampleType: ttH
+
+ST_tW_antitop_5f_InclusiveDecays:
+  sampleType: ST
+ST_tW_top_5f_InclusiveDecays:
+  sampleType: ST
+#ST_tW_antitop_5f_NoFullyHadronicDecays:
+#  sampleType: ST
+#ST_tW_top_5f_NoFullyHadronicDecays:
+#  sampleType: ST
+
+ST_t-channel_antitop_4f_InclusiveDecays:
+  sampleType: ST
+ST_t-channel_top_4f_InclusiveDecays:
+  sampleType: ST
+
+TTTo2L2Nu:
+  sampleType: TT
+TTToHadronic:
+  sampleType: TT
+TTToSemiLeptonic:
+  sampleType: TT
+
+TTWJetsToLNu:
+  sampleType: TTV
+TTWJetsToQQ:
+  sampleType: TTV
+TTWW:
+  sampleType: TTVV
+TTWZ:
+  sampleType: TTVV
+TTWH:
+  sampleType: TTVV
+TTZH:
+  sampleType: TTVV
+#TTZToLLNuNu_M-10:
+#  sampleType: TTV
+TTZToQQ:
+  sampleType: TTV
+TTZZ:
+  sampleType: TTVV
+
+WWW_4F:
+  sampleType: VVV
+  hasExt1: True
+WWZ_4F:
+  sampleType: VVV
+  hasExt1: True
+WZZ:
+  sampleType: VVV
+  hasExt1: True
+ZZZ:
+  sampleType: VVV
+  hasExt1: True
+
+WJetsToLNu:
+  sampleType: W
+W1JetsToLNu:
+  sampleType: W
+W2JetsToLNu:
+  sampleType: W
+W3JetsToLNu:
+  sampleType: W
+W4JetsToLNu:
+  sampleType: W
+WJetsToLNu_HT-70To100:
+  sampleType: W
+WJetsToLNu_HT-100To200:
+  sampleType: W
+WJetsToLNu_HT-1200To2500:
+  sampleType: W
+WJetsToLNu_HT-200To400:
+  sampleType: W
+WJetsToLNu_HT-2500ToInf:
+  sampleType: W
+WJetsToLNu_HT-400To600:
+  sampleType: W
+WJetsToLNu_HT-600To800:
+  sampleType: W
+WJetsToLNu_HT-800To1200:
+  sampleType: W
+
+#WToTauNu_M-200:
+#  sampleType: WLep
+#WToMuNu_M-200:
+#  sampleType: WLep
+
+#WGToLNuG:
+#  sampleType: WG
+
+EWK_WplusToLNu:
+  sampleType: EWK
+EWK_WminusToLNu:
+  sampleType: EWK
+EWK_ZTo2L:
+  sampleType: EWK
+EWK_ZTo2Nu:
+  sampleType: EWK
+
+ZJetsToNuNu_HT-100To200:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-1200To2500:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-200To400:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-2500ToInf:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-400To600:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-600To800:
+  sampleType: ZJNuNu
+ZJetsToNuNu_HT-800To1200:
+  sampleType: ZJNuNu
+
+TTZToNuNu:
+  sampleType: TTV
+TTGamma_Dilept:
+  sampleType: TTV
+TTGamma_Hadronic:
+  sampleType: TTV
+TTGamma_SingleLept:
+  sampleType: TTV
+TTTJ:
+  sampleType: TTT
+TTTT:
+  sampleType: TTTT
+TTTW:
+  sampleType: TTTV
+TT4b:
+  sampleType: TTJ
+TTGG:
+  sampleType: TTVV
+TTZZ:
+  sampleType: TTVV
+#TTZZTo4b:
+#  sampleType: TTVV
+#  hasExt1: True
+#TTZZToNon4b:
+#  sampleType: TTVV
+#TTZHTo4b:
+#  sampleType: TTVV
+#  hasExt1: True
+TTWH:
+  sampleType: TTVH
+#TTZHTo4b:
+#  sampleType: TTVH
+#TTZHToNon4b:
+#  sampleType: TTVH
+TTZH:
+  sampleType: TTVH
+
+

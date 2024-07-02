@@ -21,6 +21,12 @@ Task workflow managed is done via [LAW](https://github.com/riga/law) (Luigi Anal
         - 'T3_CH_CERNBOX:/store/user/USER_NAME/ANA_FOLDER/'
     fs_anaTuple:
         - 'T3_CH_CERNBOX:/store/user/USER_NAME/ANA_FOLDER/'
+    fs_anaCacheTuple:
+        - 'T3_CH_CERNBOX:/store/user/USER_NAME/ANA_FOLDER/'
+    fs_histograms:
+    - 'T3_CH_CERNBOX:/store/user/USER_NAME/ANA_FOLDER/histograms/'
+    fs_json:
+    - 'T3_CH_CERNBOX:/store/user/USER_NAME/ANA_FOLDER/jsonFiles/'
     analysis_config_area: config/HH_bbtautau
     compute_unc_variations: true
     store_noncentral: true

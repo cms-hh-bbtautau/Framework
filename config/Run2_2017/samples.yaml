@@ -2,6 +2,9 @@ GLOBAL:
   era: 'Run2_2017'
   luminosity : 41480. # pb^-1 2016 postVFP
   #luminosity: 36310.
+  fs_nanoAOD:
+  - 'T2_CH_CERN:/store/group/phys_higgs/HLepRare/HTT_skim_v1/Run2_2017'
+  nano_version: v12
   MET_flags: # https://twiki.cern.ch/twiki/bin/viewauth/CMS/MissingETOptionalFiltersRun2#2017_data_and_MC_UL
     - Flag_goodVertices
     - Flag_globalSuperTightHalo2016Filter
@@ -13,1147 +16,30 @@ GLOBAL:
     - Flag_eeBadScFilter
     #- Flag_hfNoisyHitsFilter
     #- Flag_BadChargedCandidateFilter
-  triggerFile: config/triggers_2017.yaml
+  triggerFile: config/Run2_2017/triggers.yaml
   crossSectionsFile : config/crossSections13TeV.yaml
   # from https://twiki.cern.ch/twiki/bin/viewauth/CMS/DCUserPage
   # useful link: https://twiki.cern.ch/twiki/bin/view/CMS/DCUserPage2017Analysis
   lumiFile: /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt
-  signal_types:
-    - GluGluToRadion
-    - GluGluToBulkGraviton
-    - VBFToRadion
-    - VBFToBulkGraviton
-  genuineTau_SFtype:
-    eTau: dm
-    muTau: dm
-    tauTau: dm
-  deepTauWPs:
-    eTau:
-      VSe: VVLoose
-      VSmu: Tight
-      VSjet: Medium
-    muTau:
-      VSe: VVLoose
-      VSmu: Tight
-      VSjet: Medium
-    tauTau:
-      VSe: VVLoose
-      VSmu: Tight
-      VSjet: Medium
-  corrections:
-    - tauID
-    - tauES
-    - JEC_JER
-  deepTauVersion: 2p1
-  channelSelection:
-    #- eTau
-    #- muTau
-    - tauTau
-  QCDRegions:
-    - OS_Iso
-    - SS_Iso
-    - OS_AntiIso
-    - SS_AntiIso
-  categories:
-    - res1b
-    - res2b
-    - inclusive
-    - boosted
-    - btag_shape
-    - baseline
-  storeExtraJets: False
   sampleSelection:
     - drop ^VBFToRadion*
     - drop ^VBFToBulkGraviton*
-    - drop ^.*NoFully
+    #- drop ^.*NoFully
     - drop ^.*Enriched
-    - drop ^JetHT_Run2017*
-    - drop ^Double*
-    #- drop ^ST_t-channel_top_4f_InclusiveDecays_erdON$
-    #- drop ^DYJetsToLL_M-10to50-madgraphMLM$
-    #- drop ^JetHT_Run2017F$
-    #- drop ^QCD_HT100to200_MLM$
-    #- drop ^QCD_Pt-120To170_MuEnrichedPt5$
-    #- drop ^ZJetsToQQ_HT-200to400$
-    #- drop ^ZJetsToQQ_HT-400to600$
-    #- drop ^ZJetsToQQ_HT-600to800$
-    #- drop ^ZJetsToQQ_HT-800toInf$
-    #- drop ^TTZZTo4b$
-    #- drop ^TTZHTo4b$
-    #- drop ^TT4b$
-    #- drop ^TTGJets$
-    #- drop ^TTTT$
-    #- drop ^TTZToQQ_Dilept$
-    #- drop ^TTZToNuNu$
-    #- drop ^TTZToBB$
-    #- drop ^TTZToLL_M-1to10$
+    - drop ^JetHT_Run201*
+    - drop ^WWTo*
+    - drop ^WZTo*
+    - drop ^ZZTo*
+    - drop ^ttHToNonbb*
+    - drop ^ttHTobb*
+    - drop ^TTZToLLNuNu_M*
+    - drop ^TTZZTo*
+    - drop ^TTZHTo*
+    - drop ^TTWHTo*
+    - drop ^TTHHTo*
+    #- drop ^.*erdON
 
-
-GluGluToRadionToHHTo2B2Tau_M-250:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 250
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-260:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-260_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 260
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-270:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 270
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-280:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 280
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-300:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 300
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-320:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 320
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-350:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-350_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 350
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-400:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 400
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-450:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-450_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 450
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-500:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 500
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-550:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-550_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 550
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-600:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 600
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-650:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 650
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-700:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 700
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-750:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 750
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-800:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-800_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 800
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-850:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-850_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 850
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-900:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-900_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 900
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-1000:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 1000
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-1250:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 1250
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-1500:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 1500
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-1750:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 1750
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-2000:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-2000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 2000
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-2500:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-2500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 2500
-  crossSection: 1pb
-GluGluToRadionToHHTo2B2Tau_M-3000:
-  miniAOD: /GluGluToRadionToHHTo2B2Tau_M-3000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToRadion
-  mass: 3000
-  crossSection: 1pb
-
-
-GluGluToBulkGravitonToHHTo2B2Tau_M-250:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 250
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-260:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-260_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 260
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-270:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 270
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-280:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 280
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-300:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 300
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-320:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 320
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-350:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-350_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 350
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-400:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 400
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-450:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-450_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 450
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-500:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 500
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-550:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-550_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 550
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-600:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 600
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-650:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 650
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-700:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 700
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-750:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 750
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-800:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-800_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 800
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-850:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-850_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 850
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-900:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-900_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 900
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-1000:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 1000
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-1250:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 1250
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-1500:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 1500
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-1750:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 1750
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-2000:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-2000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 2000
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-2500:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-2500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 2500
-  crossSection: 1pb
-GluGluToBulkGravitonToHHTo2B2Tau_M-3000:
-  miniAOD: /GluGluToBulkGravitonToHHTo2B2Tau_M-3000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: GluGluToBulkGraviton
-  mass: 3000
-  crossSection: 1pb
-
-VBFToRadionToHHTo2B2Tau_M-250:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 250
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-260:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-260_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 260
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-270:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 270
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-280:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 280
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-300:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 300
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-320:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 320
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-350:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-350_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 350
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-400:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 400
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-450:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-450_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 450
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-500:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 500
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-550:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-550_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 550
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-600:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 600
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-650:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 650
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-700:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 700
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-750:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 750
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-800:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-800_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 800
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-850:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-850_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 850
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-900:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-900_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 900
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-1000:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 1000
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-1250:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-1250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 1250
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-1500:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-1500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 1500
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-1750:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 1750
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-2000:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-2000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 2000
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-2500:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-2500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 2500
-  crossSection: 1pb
-VBFToRadionToHHTo2B2Tau_M-3000:
-  miniAOD: /VBFToRadionToHHTo2B2Tau_M-3000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToRadion
-  mass: 3000
-  crossSection: 1pb
-
-VBFToBulkGravitonToHHTo2B2Tau_M-250:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 250
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-260:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-260_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 260
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-270:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-270_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 270
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-280:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-280_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 280
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-300:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-300_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 300
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-320:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-320_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 320
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-350:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-350_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 350
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-400:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-400_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 400
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-450:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-450_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 450
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-500:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 500
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-550:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-550_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 550
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-600:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-600_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 600
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-650:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-650_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 650
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-700:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-700_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 700
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-750:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 750
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-800:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-800_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 800
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-850:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-850_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 850
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-900:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-900_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 900
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-1000:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-1000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 1000
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-1250:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-1250_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 1250
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-1500:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-1500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 1500
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-1750:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-1750_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 1750
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-2000:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-2000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 2000
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-2500:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-2500_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 2500
-  crossSection: 1pb
-VBFToBulkGravitonToHHTo2B2Tau_M-3000:
-  miniAOD: /VBFToBulkGravitonToHHTo2B2Tau_M-3000_TuneCP5_PSWeights_narrow_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VBFToBulkGraviton
-  mass: 3000
-  crossSection: 1pb
-
-
-GluGluToHHTo2B2Tau_node_1:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_1_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_2:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_2_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_3:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_3_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_4:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_4_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_5:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_6:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_6_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_7:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_7_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_8:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_8_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_9:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_9_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_10:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_10_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_11:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_11_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_12:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_12_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-GluGluToHHTo2B2Tau_node_SM:
-  miniAOD: /GluGluToHHTo2B2Tau_TuneCP5_PSWeights_node_SM_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: HHnonRes
-  crossSection: 1pb
-
-WW:
-  miniAOD: /WW_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VV
-  crossSection: WW
-WWTo1L1Nu2Q:
-  miniAOD: /WWTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WWTo1L1Nu2Q
-WWTo2L2Nu:
-  miniAOD: /WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WWTo2L2Nu
-WWTo4Q:
-  miniAOD: /WWTo4Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
-  sampleType: VV
-  crossSection: WWTo4Q
-WZ:
-  miniAOD: /WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VV
-  crossSection: WZ
-WZTo1L1Nu2Q:
-  miniAOD: /WZTo1L1Nu2Q_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WZTo1L1Nu2Q
-WZTo2Q2L:
-  miniAOD: /WZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WZTo2Q2L
-WZTo3LNu:
-  miniAOD: /WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WZTo3LNu
-WZTo1L3Nu:
-  miniAOD: /WZTo1L3Nu_4f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: WZTo1L3Nu
-ZZ:
-  miniAOD: /ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZ
-ZZTo2L2Nu:
-  miniAOD: /ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZTo2L2Nu
-ZZTo2Q2L:
-  miniAOD: /ZZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZTo2Q2L
-ZZTo2Q2Nu:
-  miniAOD: /ZZTo2Nu2Q_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZTo2Q2Nu
-ZZTo4L:
-  miniAOD: /ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZTo4L
-ZZTo4Q:
-  miniAOD: /ZZTo4Q_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VV
-  crossSection: ZZTo4Q
-
-
-ZH_Hbb_Zll:
-  miniAOD: /ZH_HToBB_ZToLL_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VH
-  crossSection: ZH_HToBB_ZToLL
-ZH_Hbb_Zqq:
-  miniAOD: /ZH_HToBB_ZToQQ_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: ZH_HToBB_ZToQQ
-ggHToZZTo2L2Q:
-  miniAOD: /GluGluHToZZTo2L2Q_M125_TuneCP5_13TeV_powheg2_JHUGenV7011_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: ggHToZZTo2L2Q
-GluGluHToTauTau_M125:
-  miniAOD: /GluGluHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
-  sampleType: H
-  crossSection: GluGluHToTauTau
-VBFHToTauTau_M125:
-  miniAOD: /VBFHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: VBFHToTauTau
-WplusHToTauTau_M125:
-  miniAOD: /WplusHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: WplusHToTauTau
-WminusHToTauTau_M125:
-  miniAOD: /WminusHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: WminusHToTauTau
-ZHToTauTau_M125:
-  miniAOD: /ZHToTauTau_M125_CP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: ZHToTauTau
-ZHToTauTau_M125_ext1:
-  miniAOD: /ZHToTauTau_M125_CP5_13TeV-powheg-pythia8_ext1/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: H
-  crossSection: ZHToTauTau
-
-GluGluHToWWTo2L2Nu_M125:
-  miniAOD: /GluGluHToWWTo2L2Nu_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: GluGluHToWWTo2L2Nu
-VBFHToWWTo2L2Nu_M125:
-  miniAOD: /VBFHToWWTo2L2Nu_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: VBFHToWWTo2L2Nu
-HWplusJ_HToWW_M125:
-  miniAOD: /HWplusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: HWplusJ_HToWW
-HWminusJ_HToWW_M125:
-  miniAOD: /HWminusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: HWminusJ_HToWW
-HZJ_HToWW_M125:
-  miniAOD: /HZJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: HZJ_HToWW
-HZJ_HToWW_M125_ext1:
-  miniAOD: /HZJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: HZJ_HToWW
-GluGluZH_HToWW_ZTo2L_M125:
-  miniAOD: /GluGluZH_HToWW_ZTo2L_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: GluGluZH_HToWW_ZTo2L
-GluGluZH_HToWW_ZTo2L_M125_ext1:
-  miniAOD: /GluGluZH_HToWW_ZTo2L_M-125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VH
-  crossSection: GluGluZH_HToWW_ZTo2L
-
-ttHToNonbb_M125:
-  miniAOD: /ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ttH
-  crossSection: ttHToNonbb
-ttHTobb_M125:
-  miniAOD: /ttHTobb_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ttH
-  crossSection: ttHTobb
-ttHToTauTau_M125:
-  miniAOD: /ttHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
-  sampleType: ttH
-  crossSection: ttHToTauTau
-
-
-ST_tW_antitop_5f_InclusiveDecays:
-  miniAOD: /ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_tW_antitop
-ST_tW_top_5f_InclusiveDecays:
-  miniAOD: /ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_tW_top
-ST_tW_antitop_5f_NoFullyHadronicDecays:
-  miniAOD: /ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_tW_antitop # tbf
-ST_tW_top_5f_NoFullyHadronicDecays:
-  miniAOD: /ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_tW_top # tbf
-
-ST_t-channel_antitop_4f_InclusiveDecays_erdON:
-  miniAOD: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_erdON_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_t-channel_antitop
-ST_t-channel_top_4f_InclusiveDecays_erdON:
-  miniAOD: /ST_t-channel_top_4f_InclusiveDecays_TuneCP5_erdON_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_t-channel_top
-ST_t-channel_antitop_4f_InclusiveDecays:
-  miniAOD: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_t-channel_antitop
-ST_t-channel_top_4f_InclusiveDecays:
-  miniAOD: /ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: ST
-  crossSection: ST_t-channel_top
-
-#ST_s-channel_4f_leptonDecays:
-#  miniAOD: /ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-#  sampleType: ST
-#  crossSection:
-#ST_s-channel_4f_hadronicDecays:
-#  miniAOD: /ST_s-channel_4f_hadronicDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-#  sampleType: ST
-#  crossSection:
-
-
-WWW_4F:
-  miniAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VVV
-  crossSection: WWW_4F
-WWW_4F_ext1:
-  miniAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VVV
-  crossSection: WWW_4F
-WWZ_4F:
-  miniAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VVV
-  crossSection: WWZ_4F
-WWZ_4F_ext1:
-  miniAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VVV
-  crossSection: WWZ_4F
-WZZ:
-  miniAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VVV
-  crossSection: WZZ
-WZZ_ext1:
-  miniAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VVV
-  crossSection: WZZ
-ZZZ:
-  miniAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: VVV
-  crossSection: ZZZ
-ZZZ_ext1:
-  miniAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM
-  sampleType: VVV
-  crossSection: ZZZ
-
-
-TTTo2L2Nu:
-  miniAOD: /TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TT
-  crossSection: TTTo2L2Nu
-TTToHadronic:
-  miniAOD: /TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TT
-  crossSection: TTToHadronic
-TTToSemiLeptonic:
-  miniAOD: /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TT
-  crossSection: TTToSemiLeptonic
-
-TTWJetsToLNu:
-  miniAOD: /TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTWJetsToLNu
-TTWJetsToQQ:
-  miniAOD: /TTWJetsToQQ_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTWJetsToQQ
-TTWW:
-  miniAOD: /TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTWW
-TTWZ:
-  miniAOD: /TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTWZ
-TTWH:
-  miniAOD: /TTWH_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTWH
-TTZH:
-  miniAOD: /TTZH_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTZH
-TTZToLLNuNu_M-10:
-  miniAOD: /TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTZToLLNuNu_M-10
-TTZToQQ:
-  miniAOD: /TTZToQQ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTZToQQ
-TTZZ:
-  miniAOD: /TTZZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: TTVV
-  crossSection: TTZZ
-TTHH:
-  miniAOD:
-  sampleType: TTHH
-  crossSection: TTHH
-
-TTHHTo4b:
-  miniAOD:
-  sampleType: TTHH
-  crossSection: TTHHTo4b
-TTHHToNon4b:
-  miniAOD:
-  sampleType: TTHH
-  crossSection: TTHHToNon4b
-TTHHTo2B2Tau_HEFT_c2-3:
-  miniAOD: /TTHHTo2B2Tau_HEFT_c2-3_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_c2-6:
-  miniAOD: /TTHHTo2B2Tau_HEFT_c2-6_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_c2-m1:
-  miniAOD: /TTHHTo2B2Tau_HEFT_c2-m1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_kl-0p5_c2-1:
-  miniAOD: /TTHHTo2B2Tau_HEFT_kl-0p5_c2-1_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_kl-2:
-  miniAOD: /TTHHTo2B2Tau_HEFT_kl-2_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_kl-3:
-  miniAOD: /TTHHTo2B2Tau_HEFT_kl-3_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau_HEFT_kt-2:
-  miniAOD: /TTHHTo2B2Tau_HEFT_kt-2_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-TTHHTo2B2Tau:
-  miniAOD: /TTHHTo2B2Tau_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: TTHH
-  crossSection: 1pb
-
-
-WJetsToLNu:
-  miniAOD: /WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  isReference: True
-  crossSection: WJetsToLNu_NNLO
-  crossSectionStitch: WJetsToLNu_LO
-W1JetsToLNu:
-  miniAOD: /W1JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W1JetsToLNu_LO
-W2JetsToLNu:
-  miniAOD: /W2JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W2JetsToLNu_LO
-W3JetsToLNu:
-  miniAOD: /W3JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W3JetsToLNu_LO
-W4JetsToLNu:
-  miniAOD: /W4JetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W4JetsToLNu_LO
-
-#WJetsToLNu-amcatnloFXFX:
-#  miniAOD: /WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-#  sampleType: W
-#  crossSectionStitch: WJetsToLNu-amcatnloFXFX
-W0JetsToLNu-amcatnloFXFX:
-  miniAOD: /WJetsToLNu_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W0JetsToLNu_NLO
-W1JetsToLNu-amcatnloFXFX:
-  miniAOD: /WJetsToLNu_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W1JetsToLNu_LO
-W2JetsToLNu-amcatnloFXFX:
-  miniAOD: /WJetsToLNu_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: W2JetsToLNu_LO
-
-WJetsToLNu_HT-70To100:
-  miniAOD: /WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-70To100_LO
-WJetsToLNu_HT-100To200:
-  miniAOD: /WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-100To200_LO
-WJetsToLNu_HT-1200To2500:
-  miniAOD: /WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-1200To2500_LO
-WJetsToLNu_HT-200To400:
-  miniAOD: /WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-200To400_LO
-WJetsToLNu_HT-2500ToInf:
-  miniAOD: /WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-2500ToInf_LO
-WJetsToLNu_HT-400To600:
-  miniAOD: /WJetsToLNu_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-400To600_LO
-WJetsToLNu_HT-600To800:
-  miniAOD: /WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-600To800_LO
-WJetsToLNu_HT-800To1200:
-  miniAOD: /WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: W
-  crossSectionStitch: WJetsToLNu_HT-800To1200_LO
-
-WToTauNu_M-200:
-  miniAOD: /WToTauNu_M-200_TuneCP5_13TeV-pythia8-tauola/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: WLep
-  crossSection: WToTauNu_M-200
-WToMuNu_M-200:
-  miniAOD: /WToMuNu_M-200_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: WLep
-  crossSection: WToMuNu_M-200
-
-WGToLNuG:
-  miniAOD: /WGToLNuG_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: WG
-  crossSection: WGToLNuG
-
-EWK_WplusToLNu:
-  miniAOD: /EWKWPlus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: EWK
-  crossSection: EWK_WplusToLNu
-EWK_WminusToLNu:
-  miniAOD: /EWKWMinus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: EWK
-  crossSection: EWK_WminusToLNu
-
-DYJetsToLL_M-10to50-madgraphMLM:
-  miniAOD: /DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_LO_M-10to50
-#DYJetsToLL_M-50-madgraphMLM:
-#  miniAOD: /DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-#  sampleType: DY
-#  crossSectionStitch:
-#DYJetsToLL_M-50-madgraphMLM_ext1:
-#  miniAOD: /DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v1/MINIAODSIM
-#  sampleType: DY
-#  crossSectionStitch:
-DY1JetsToLL_M-50-madgraphMLM:
-  miniAOD: /DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_LO_1J
-DY2JetsToLL_M-50-madgraphMLM:
-  miniAOD: /DY2JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_LO_2J
-DY3JetsToLL_M-50-madgraphMLM:
-  miniAOD: /DY3JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_LO_3J
-DY4JetsToLL_M-50-madgraphMLM:
-  miniAOD: /DY4JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_LO_4J
-
-DYJetsToLL_M-50-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  isReference: true
-  crossSection: DY_LO
-  crossSectionStitch: DY_NLO
-
-DYJetsToLL_0J-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_0J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_0J
-DYJetsToLL_1J-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_1J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_1J
-DYJetsToLL_2J-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_2J_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_2J
-
-DYJetsToLL_LHEFilterPtZ-0To50-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-0To50_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-0To50
-DYJetsToLL_LHEFilterPtZ-50To100-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-50To100_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-50To100
-DYJetsToLL_LHEFilterPtZ-100To250-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-100To250_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-100To250
-DYJetsToLL_LHEFilterPtZ-250To400-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-250To400_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-250To400
-DYJetsToLL_LHEFilterPtZ-400To650-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-400To650_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v4/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-400To650
-DYJetsToLL_LHEFilterPtZ-650ToInf-amcatnloFXFX:
-  miniAOD: /DYJetsToLL_LHEFilterPtZ-650ToInf_MatchEWPDG20_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: DY
-  crossSectionStitch: DY_NLO_LHEFilterPtZ-650ToInf
-
-DoubleMuon_Run2017B:
-  miniAOD: /DoubleMuon/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017C:
-  miniAOD: /DoubleMuon/Run2017C-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017D:
-  miniAOD: /DoubleMuon/Run2017D-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017E:
-  miniAOD: /DoubleMuon/Run2017E-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017F:
-  miniAOD: /DoubleMuon/Run2017F-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-
+############## Data ##############
 SingleElectron_Run2017B:
   miniAOD: /SingleElectron/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
   sampleType: data
@@ -1202,38 +88,6 @@ Tau_Run2017F:
   miniAOD: /Tau/Run2017F-UL2017_MiniAODv2-v1/MINIAOD
   sampleType: data
 
-DoubleEG_Run2017B:
-  miniAOD: /DoubleEG/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleEG_Run2017C:
-  miniAOD: /DoubleEG/Run2017C-UL2017_MiniAODv2-v2/MINIAOD
-  sampleType: data
-DoubleEG_Run2017D:
-  miniAOD: /DoubleEG/Run2017D-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleEG_Run2017E:
-  miniAOD: /DoubleEG/Run2017E-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleEG_Run2017F:
-  miniAOD: /DoubleEG/Run2017F-UL2017_MiniAODv2-v2/MINIAOD
-  sampleType: data
-
-DoubleMuon_Run2017B:
-  miniAOD: /DoubleMuon/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017C:
-  miniAOD: /DoubleMuon/Run2017C-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017D:
-  miniAOD: /DoubleMuon/Run2017D-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017E:
-  miniAOD: /DoubleMuon/Run2017E-UL2017_MiniAODv2-v2/MINIAOD
-  sampleType: data
-DoubleMuon_Run2017F:
-  miniAOD: /DoubleMuon/Run2017F-UL2017_MiniAODv2-v1/MINIAOD
-  sampleType: data
-
 JetHT_Run2017B:
   miniAOD: /JetHT/Run2017B-UL2017_MiniAODv2-v1/MINIAOD
   sampleType: data
@@ -1266,362 +120,1102 @@ MET_Run2017F:
   miniAOD: /MET/Run2017F-UL2017_MiniAODv2-v1/MINIAOD
   sampleType: data
 
+
+############## Signals ##############
+GluGluToRadionToHHTo2B2Tau_M-250:
+  sampleType: GluGluToRadion
+  mass: 250
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-260:
+  sampleType: GluGluToRadion
+  mass: 260
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-270:
+  sampleType: GluGluToRadion
+  mass: 270
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-280:
+  sampleType: GluGluToRadion
+  mass: 280
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-300:
+  sampleType: GluGluToRadion
+  mass: 300
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-320:
+  sampleType: GluGluToRadion
+  mass: 320
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-350:
+  sampleType: GluGluToRadion
+  mass: 350
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-400:
+  sampleType: GluGluToRadion
+  mass: 400
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-450:
+  sampleType: GluGluToRadion
+  mass: 450
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-500:
+  sampleType: GluGluToRadion
+  mass: 500
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-550:
+  sampleType: GluGluToRadion
+  mass: 550
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-600:
+  sampleType: GluGluToRadion
+  mass: 600
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-650:
+  sampleType: GluGluToRadion
+  mass: 650
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-700:
+  sampleType: GluGluToRadion
+  mass: 700
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-750:
+  sampleType: GluGluToRadion
+  mass: 750
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-800:
+  sampleType: GluGluToRadion
+  mass: 800
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-850:
+  sampleType: GluGluToRadion
+  mass: 850
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-900:
+  sampleType: GluGluToRadion
+  mass: 900
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-1000:
+  sampleType: GluGluToRadion
+  mass: 1000
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-1250:
+  sampleType: GluGluToRadion
+  mass: 1250
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-1500:
+  sampleType: GluGluToRadion
+  mass: 1500
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-1750:
+  sampleType: GluGluToRadion
+  mass: 1750
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-2000:
+  sampleType: GluGluToRadion
+  mass: 2000
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-2500:
+  sampleType: GluGluToRadion
+  mass: 2500
+  spin: 0
+  crossSection: 1pb
+GluGluToRadionToHHTo2B2Tau_M-3000:
+  sampleType: GluGluToRadion
+  mass: 3000
+  spin: 0
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-250:
+  sampleType: GluGluToBulkGraviton
+  mass: 250
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-260:
+  sampleType: GluGluToBulkGraviton
+  mass: 260
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-270:
+  sampleType: GluGluToBulkGraviton
+  mass: 270
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-280:
+  sampleType: GluGluToBulkGraviton
+  mass: 280
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-300:
+  sampleType: GluGluToBulkGraviton
+  mass: 300
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-320:
+  sampleType: GluGluToBulkGraviton
+  mass: 320
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-350:
+  sampleType: GluGluToBulkGraviton
+  mass: 350
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-400:
+  sampleType: GluGluToBulkGraviton
+  mass: 400
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-450:
+  sampleType: GluGluToBulkGraviton
+  mass: 450
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-500:
+  sampleType: GluGluToBulkGraviton
+  mass: 500
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-550:
+  sampleType: GluGluToBulkGraviton
+  mass: 550
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-600:
+  sampleType: GluGluToBulkGraviton
+  mass: 600
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-650:
+  sampleType: GluGluToBulkGraviton
+  mass: 650
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-700:
+  sampleType: GluGluToBulkGraviton
+  mass: 700
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-750:
+  sampleType: GluGluToBulkGraviton
+  mass: 750
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-800:
+  sampleType: GluGluToBulkGraviton
+  mass: 800
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-850:
+  sampleType: GluGluToBulkGraviton
+  mass: 850
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-900:
+  sampleType: GluGluToBulkGraviton
+  mass: 900
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-1000:
+  sampleType: GluGluToBulkGraviton
+  mass: 1000
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-1250:
+  sampleType: GluGluToBulkGraviton
+  mass: 1250
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-1500:
+  sampleType: GluGluToBulkGraviton
+  mass: 1500
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-1750:
+  sampleType: GluGluToBulkGraviton
+  mass: 1750
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-2000:
+  sampleType: GluGluToBulkGraviton
+  mass: 2000
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-2500:
+  sampleType: GluGluToBulkGraviton
+  mass: 2500
+  spin: 2
+  crossSection: 1pb
+GluGluToBulkGravitonToHHTo2B2Tau_M-3000:
+  sampleType: GluGluToBulkGraviton
+  mass: 3000
+  spin: 2
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-250:
+  sampleType: VBFToRadion
+  mass: 250
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-260:
+  sampleType: VBFToRadion
+  mass: 260
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-270:
+  sampleType: VBFToRadion
+  mass: 270
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-280:
+  sampleType: VBFToRadion
+  mass: 280
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-300:
+  sampleType: VBFToRadion
+  mass: 300
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-320:
+  sampleType: VBFToRadion
+  mass: 320
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-350:
+  sampleType: VBFToRadion
+  mass: 350
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-400:
+  sampleType: VBFToRadion
+  mass: 400
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-450:
+  sampleType: VBFToRadion
+  mass: 450
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-500:
+  sampleType: VBFToRadion
+  mass: 500
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-550:
+  sampleType: VBFToRadion
+  mass: 550
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-600:
+  sampleType: VBFToRadion
+  mass: 600
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-650:
+  sampleType: VBFToRadion
+  mass: 650
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-700:
+  sampleType: VBFToRadion
+  mass: 700
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-750:
+  sampleType: VBFToRadion
+  mass: 750
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-800:
+  sampleType: VBFToRadion
+  mass: 800
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-850:
+  sampleType: VBFToRadion
+  mass: 850
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-900:
+  sampleType: VBFToRadion
+  mass: 900
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-1000:
+  sampleType: VBFToRadion
+  mass: 1000
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-1250:
+  sampleType: VBFToRadion
+  mass: 1250
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-1500:
+  sampleType: VBFToRadion
+  mass: 1500
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-1750:
+  sampleType: VBFToRadion
+  mass: 1750
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-2000:
+  sampleType: VBFToRadion
+  mass: 2000
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-2500:
+  sampleType: VBFToRadion
+  mass: 2500
+  spin: 0
+  crossSection: 1pb
+VBFToRadionToHHTo2B2Tau_M-3000:
+  sampleType: VBFToRadion
+  mass: 3000
+  spin: 0
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-250:
+  sampleType: VBFToBulkGraviton
+  mass : 250
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-260:
+  sampleType: VBFToBulkGraviton
+  mass : 260
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-270:
+  sampleType: VBFToBulkGraviton
+  mass : 270
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-280:
+  sampleType: VBFToBulkGraviton
+  mass : 280
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-300:
+  sampleType: VBFToBulkGraviton
+  mass : 300
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-320:
+  sampleType: VBFToBulkGraviton
+  mass : 320
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-350:
+  sampleType: VBFToBulkGraviton
+  mass : 350
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-400:
+  sampleType: VBFToBulkGraviton
+  mass : 400
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-450:
+  sampleType: VBFToBulkGraviton
+  mass : 450
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-500:
+  sampleType: VBFToBulkGraviton
+  mass : 500
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-550:
+  sampleType: VBFToBulkGraviton
+  mass : 550
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-600:
+  sampleType: VBFToBulkGraviton
+  mass : 600
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-650:
+  sampleType: VBFToBulkGraviton
+  mass : 650
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-700:
+  sampleType: VBFToBulkGraviton
+  mass : 700
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-750:
+  sampleType: VBFToBulkGraviton
+  mass : 750
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-800:
+  sampleType: VBFToBulkGraviton
+  mass : 800
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-850:
+  sampleType: VBFToBulkGraviton
+  mass : 850
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-900:
+  sampleType: VBFToBulkGraviton
+  mass : 900
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-1000:
+  sampleType: VBFToBulkGraviton
+  mass : 1000
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-1250:
+  sampleType: VBFToBulkGraviton
+  mass : 1250
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-1500:
+  sampleType: VBFToBulkGraviton
+  mass : 1500
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-1750:
+  sampleType: VBFToBulkGraviton
+  mass : 1750
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-2000:
+  sampleType: VBFToBulkGraviton
+  mass : 2000
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-2500:
+  sampleType: VBFToBulkGraviton
+  mass : 2500
+  spin: 2
+  crossSection: 1pb
+VBFToBulkGravitonToHHTo2B2Tau_M-3000:
+  sampleType: VBFToBulkGraviton
+  mass : 3000
+  spin: 2
+  crossSection: 1pb
+
+############## TT ##############
+TTTo2L2Nu:
+  sampleType: TT
+  crossSection: TTTo2L2Nu
+TTToHadronic:
+  sampleType: TT
+  crossSection: TTToHadronic
+TTToSemiLeptonic:
+  sampleType: TT
+  crossSection: TTToSemiLeptonic
+
+############## WJetsToLNu ##############
+WJetsToLNu:
+  sampleType: W
+  isReference: True
+  crossSection: WJetsToLNu_NNLO
+  crossSectionStitch: WJetsToLNu_LO
+
+W1JetsToLNu:
+  sampleType: W
+  crossSectionStitch: W1JetsToLNu_LO
+W2JetsToLNu:
+  sampleType: W
+  crossSectionStitch: W2JetsToLNu_LO
+W3JetsToLNu:
+  sampleType: W
+  crossSectionStitch: W3JetsToLNu_LO
+W4JetsToLNu:
+  sampleType: W
+  crossSectionStitch: W4JetsToLNu_LO
+
+WJetsToLNu_HT-100To200:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-100To200_LO
+WJetsToLNu_HT-1200To2500:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-1200To2500_LO
+WJetsToLNu_HT-200To400:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-200To400_LO
+WJetsToLNu_HT-2500ToInf:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-2500ToInf_LO
+WJetsToLNu_HT-400To600:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-400To600_LO
+WJetsToLNu_HT-600To800:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-600To800_LO
+WJetsToLNu_HT-70To100:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-70To100_LO
+WJetsToLNu_HT-70To100_ext1:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-70To100_LO
+WJetsToLNu_HT-800To1200:
+  sampleType: W
+  crossSectionStitch: WJetsToLNu_HT-800To1200_LO
+
+
+############## DY ##############
+DYJetsToLL_M-50-amcatnloFXFX:
+  sampleType: DY
+  isReference: True
+  crossSection: DY_LO
+  crossSectionStitch: DY_NLO
+DYJetsToLL_0J-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_0J
+DYJetsToLL_1J-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_1J
+DYJetsToLL_2J-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_2J
+DYJetsToLL_LHEFilterPtZ-0To50-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-0To50
+DYJetsToLL_LHEFilterPtZ-50To100-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-50To100
+DYJetsToLL_LHEFilterPtZ-100To250-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-100To250
+DYJetsToLL_LHEFilterPtZ-250To400-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-250To400
+DYJetsToLL_LHEFilterPtZ-400To650-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-400To650
+DYJetsToLL_LHEFilterPtZ-650ToInf-amcatnloFXFX:
+  sampleType: DY
+  crossSectionStitch: DY_NLO_LHEFilterPtZ-650ToInf
+
+############## EWK ##############
+EWK_ZTo2L:
+  sampleType: EWK
+  crossSection: EWK_ZTo2L
+EWK_ZTo2Nu:
+  sampleType: EWK
+  crossSection: EWK_ZTo2Nu
+EWK_WplusToLNu:
+  sampleType: EWK
+  crossSection: EWK_WplusToLNu
+EWK_WminusToLNu:
+  sampleType: EWK
+  crossSection: EWK_WminusToLNu
+
+############## single Higgs ##############
+ggHToZZTo2L2Q:
+  sampleType: H
+  crossSection: ggHToZZTo2L2Q
+GluGluHToTauTau_M125:
+  sampleType: H
+  crossSection: GluGluHToTauTau
+VBFHToTauTau_M125:
+  sampleType: H
+  crossSection: VBFHToTauTau
+GluGluHToWWTo2L2Nu_M125:
+  sampleType: H
+  crossSection: GluGluHToWWTo2L2Nu
+VBFHToWWTo2L2Nu_M125:
+  sampleType: H
+  crossSection: VBFHToWWTo2L2Nu
+
+############## VH non-inclusive ##############
+WplusHToTauTau_M125:
+  sampleType: VH
+  crossSection: WplusHToTauTau
+WminusHToTauTau_M125:
+  sampleType: VH
+  crossSection: WminusHToTauTau
+ZHToTauTau_M125:
+  sampleType: VH
+  crossSection: ZHToTauTau
+ZH_Hbb_Zll:
+  sampleType: VH
+  crossSection: ZH_HToBB_ZToLL
+ZH_Hbb_Zqq:
+  sampleType: VH
+  crossSection: ZH_HToBB_ZToQQ
+  HWplusJ_HToWW_M125:
+  sampleType: VH
+  crossSection: HWplusJ_HToWW
+HWminusJ_HToWW_M125:
+  sampleType: VH
+  crossSection: HWminusJ_HToWW
+HZJ_HToWW_M125:
+  sampleType: VH
+  crossSection: HZJ_HToWW
+HZJ_HToWW_M125_ext1:
+  sampleType: VH
+  crossSection: HZJ_HToWW
+GluGluZH_HToWW_ZTo2L_M125:
+  sampleType: VH
+  crossSection: GluGluZH_HToWW_ZTo2L
+GluGluZH_HToWW_ZTo2L_M125_ext1:
+  sampleType: VH
+  crossSection: GluGluZH_HToWW_ZTo2L
+
+############## VV inclusive ##############
+WW:
+  sampleType: VV
+  crossSection: WW
+WZ:
+  sampleType: VV
+  crossSection: WZ
+ZZ:
+  sampleType: VV
+  crossSection: ZZ
+
+############## VV non-inclusive ##############
+WWTo1L1Nu2Q:
+  sampleType: VV
+  crossSection: WWTo1L1Nu2Q
+WWTo2L2Nu:
+  sampleType: VV
+  crossSection: WWTo2L2Nu
+WWTo4Q:
+  sampleType: VV
+  crossSection: WWTo4Q
+WZTo1L1Nu2Q:
+  sampleType: VV
+  crossSection: WZTo1L1Nu2Q
+WZTo2Q2L:
+  sampleType: VV
+  crossSection: WZTo2Q2L
+WZTo3LNu:
+  sampleType: VV
+  crossSection: WZTo3LNu
+ZZTo2L2Nu:
+  sampleType: VV
+  crossSection: ZZTo2L2Nu
+ZZTo2Q2L:
+  sampleType: VV
+  crossSection: ZZTo2Q2L
+ZZTo2Q2Nu:
+  sampleType: VV
+  crossSection: ZZTo2Q2Nu
+ZZTo4L:
+  sampleType: VV
+  crossSection: ZZTo4L
+ZZTo4Q:
+  sampleType: VV
+  crossSection: ZZTo4Q
+
+
+############## VVV inclusive ##############
+WWW_4F:
+  sampleType: VVV
+  crossSection: WWW_4F
+WWW_4F_ext1:
+  sampleType: VVV
+  crossSection: WWW_4F
+WWZ_4F:
+  sampleType: VVV
+  crossSection: WWZ_4F
+WWZ_4F_ext1:
+  sampleType: VVV
+  crossSection: WWZ_4F
+WZZ:
+  sampleType: VVV
+  crossSection: WZZ
+WZZ_ext1:
+  sampleType: VVV
+  crossSection: WZZ
+ZZZ:
+  sampleType: VVV
+  crossSection: ZZZ
+ZZZ_ext1:
+  sampleType: VVV
+  crossSection: ZZZ
+
+############## ST #############
+ST_t-channel_antitop_4f_InclusiveDecays:
+  sampleType: ST
+  crossSection: ST_t-channel_antitop
+ST_t-channel_top_4f_InclusiveDecays:
+  sampleType: ST
+  crossSection: ST_t-channel_top
+ST_tW_antitop_5f_InclusiveDecays:
+  sampleType: ST
+  crossSection: ST_tW
+ST_tW_top_5f_InclusiveDecays:
+  sampleType: ST
+  crossSection: ST_tW
+
+#ST_tW_antitop_5f_NoFullyHadronicDecays:
+#
+#  sampleType: ST
+#  crossSection: ST_tW_antitop
+#ST_tW_top_5f_NoFullyHadronicDecays:
+#
+#  sampleType: ST
+#  crossSection: ST_tW_top
+#ST_t-channel_antitop_4f_InclusiveDecays_erdON:
+#
+#  sampleType: ST
+#  crossSection: ST_t-channel_antitop
+#ST_t-channel_top_4f_InclusiveDecays_erdON:
+#
+#  sampleType: ST
+#  crossSection: ST_t-channel_top
+
+
+############## TTX inclusive ##############
+TTHH:
+  sampleType: TTX
+  crossSection: TTHH
+TTWH:
+  sampleType: TTX
+  crossSection: TTWH
+TTZZ:
+  sampleType: TTX
+  crossSection: TTZZ
+TTWW:
+  sampleType: TTX
+  crossSection: TTWW
+TTWH:
+  sampleType: TTX
+  crossSection: TTWH
+TTZH:
+  sampleType: TTX
+  crossSection: TTZH
+TTZZ:
+  sampleType: TTX
+  crossSection: TTZZ
+TTWZ:
+  sampleType: TTX
+  crossSection: TTWZ
+TTTT:
+  sampleType: TTX
+  crossSection: TTTT
+TTTW:
+  sampleType: TTX
+  crossSection: TTTW
+TTTJ:
+  sampleType: TTX
+  crossSection: TTTJ
+TTGG:
+  sampleType: TTX
+  crossSection: TTGG
+TTGJets:
+  sampleType: TTX
+  crossSection: TTGJets
+############## TTX non-inclusive ##############
+TT4b:
+  sampleType: TTX
+  crossSection: TT4b
+TTGamma_Dilept:
+  sampleType: TTX
+  crossSection: TTGamma_Dilept
+TTGamma_Hadronic:
+  sampleType: TTX
+  crossSection: TTGamma_Hadronic
+TTGamma_SingleLept:
+  sampleType: TTX
+  crossSection: TTGamma_SingleLept
+
+
+TTWJetsToLNu:
+  sampleType: TTX
+  crossSection: TTWJetsToLNu
+TTWJetsToQQ:
+  sampleType: TTX
+  crossSection: TTWJetsToQQ
+
+TTZToQQ_Dilept:
+  sampleType: TTX
+  crossSection: TTZToQQ_Dilept
+TTZToNuNu:
+  sampleType: TTX
+  crossSection: TTZToNuNu
+TTZToBB:
+  sampleType: TTX
+  crossSection: TTZToBB
+TTZToLL_M-1to10:
+  sampleType: TTX
+  crossSection: TTZToLL_M-1to10
+TTZToLLNuNu_M-10:
+  sampleType: TTX
+  crossSection: TTZToLLNuNu_M-10
+TTZToQQ:
+  sampleType: TTX
+  crossSection: TTZToQQ
+
+TTHHTo4b:
+  sampleType: TTX
+  crossSection: TTHHTo4b
+TTHHToNon4b:
+  sampleType: TTX
+  crossSection: TTHHToNon4b
+TTHHTo2B2Tau:
+  sampleType: TTX
+  crossSection: 1pb
+
+TTZHTo4b:
+  sampleType: TTX
+  crossSection: TTZHTo4b
+TTZHTo4b_ext1:
+  sampleType: TTX
+  crossSection: TTZHTo4b
+TTZHToNon4b:
+  sampleType: TTX
+  crossSection: TTZHToNon4b
+
+TTZZTo4b:
+  sampleType: TTX
+  crossSection: TTZZTo4b
+TTZZTo4b_ext1:
+  sampleType: TTX
+  crossSection: TTZZTo4b
+TTZZToNon4b:
+  sampleType: TTX
+  crossSection: TTZZToNon4b
+
+############## ttH ##############
+ttHToNonbb_M125:
+  sampleType: ttH
+  crossSection: ttHToNonbb
+ttHTobb_M125:
+  sampleType: ttH
+  crossSection: ttHTobb
+ttHToTauTau_M125:
+  sampleType: ttH
+  crossSection: ttHToTauTau
+
+############## HHbbTauTau NonRes ##############
+GluGluToHHTo2B2Tau_node_SM:
+  sampleType: HHnonRes
+  crossSection: ggHH_bbTauTau_SM
+GluGluToHHTo2B2Tau_node_1:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_2:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_3:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_4:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_5:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_6:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_7:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_8:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_9:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_10:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_11:
+  sampleType: HHnonRes
+  crossSection: 1pb
+GluGluToHHTo2B2Tau_node_12:
+  sampleType: HHnonRes
+  crossSection: 1pb
+
+
+############## QCD ##############
 QCD_HT50to100_MLM:
-  miniAOD: /QCD_HT50to100_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT50to100
 QCD_HT50to100:
-  miniAOD: /QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT50to100
 QCD_HT100to200_MLM:
-  miniAOD: /QCD_HT100to200_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT100to200
 QCD_HT100to200:
-  miniAOD: /QCD_HT100to200_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT100to200
 QCD_HT200to300_MLM:
-  miniAOD: /QCD_HT200to300_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT200to300
 QCD_HT200to300:
-  miniAOD: /QCD_HT200to300_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT200to300
 QCD_HT300to500_MLM:
-  miniAOD: /QCD_HT300to500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT300to500
 QCD_HT300to500:
-  miniAOD: /QCD_HT300to500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT300to500
 QCD_HT500to700_MLM:
-  miniAOD: /QCD_HT500to700_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT500to700
 QCD_HT500to700:
-  miniAOD: /QCD_HT500to700_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT500to700
 QCD_HT700to1000_MLM:
-  miniAOD: /QCD_HT700to1000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT700to1000
 QCD_HT700to1000:
-  miniAOD: /QCD_HT700to1000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT700to1000
 QCD_HT1000to1500_MLM:
-  miniAOD: /QCD_HT1000to1500_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT1000to1500
 QCD_HT1000to1500:
-  miniAOD: /QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT1000to1500
 QCD_HT1500to2000_MLM:
-  miniAOD: /QCD_HT1500to2000_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT1500to2000
 QCD_HT1500to2000:
-  miniAOD: /QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT1500to2000
 QCD_HT2000toInf_MLM:
-  miniAOD: /QCD_HT2000toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT2000toInf
 QCD_HT2000toInf:
-  miniAOD: /QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_HT2000toInf
 
 QCD_Pt_15to30:
-  miniAOD: /QCD_Pt_15to30_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_15to30
 QCD_Pt_30to50:
-  miniAOD: /QCD_Pt_30to50_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_30to50
 QCD_Pt_50to80:
-  miniAOD: /QCD_Pt_50to80_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_50to80
 QCD_Pt_80to120:
-  miniAOD: /QCD_Pt_80to120_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_80to120
 QCD_Pt_120to170:
-  miniAOD: /QCD_Pt_120to170_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_120to170
 QCD_Pt_170to300:
-  miniAOD: /QCD_Pt_170to300_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_170to300
 QCD_Pt_300to470:
-  miniAOD: /QCD_Pt_300to470_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_300to470
 QCD_Pt_470to600:
-  miniAOD: /QCD_Pt_470to600_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_470to600
 QCD_Pt_600to800:
-  miniAOD: /QCD_Pt_600to800_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_600to800
 QCD_Pt_800to1000:
-  miniAOD: /QCD_Pt_800to1000_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_800to1000
 QCD_Pt_1000to1400:
-  miniAOD: /QCD_Pt_1000to1400_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_1000to1400
 QCD_Pt_1400to1800:
-  miniAOD: /QCD_Pt_1400to1800_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_1400to1800
 QCD_Pt_1800to2400:
-  miniAOD: /QCD_Pt_1800to2400_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_1800to2400
 QCD_Pt_2400to3200:
-  miniAOD: /QCD_Pt_2400to3200_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_2400to3200
 QCD_Pt_3200toInf:
-  miniAOD: /QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt_3200toInf
 
 QCD_Pt-20_MuEnrichedPt15:
-  miniAOD: /QCD_Pt-20_MuEnrichedPt15_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-20_MuEnrichedPt15
 
 QCD_Pt-15To20_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-15To20_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-15To20_MuEnrichedPt5
 QCD_Pt-20To30_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-20To30_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-20To30_MuEnrichedPt5
 QCD_Pt-30To50_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-30To50_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-30To50_MuEnrichedPt5
 QCD_Pt-50To80_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-50To80_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-50To80_MuEnrichedPt5
 QCD_Pt-80To120_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-80To120_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-80To120_MuEnrichedPt5
 QCD_Pt-120To170_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-120To170_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-120To170_MuEnrichedPt5
 QCD_Pt-170To300_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-170To300_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-170To300_MuEnrichedPt5
 QCD_Pt-300To470_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-300To470_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-300To470_MuEnrichedPt5
 QCD_Pt-470To600_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-470To600_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-470To600_MuEnrichedPt5
 QCD_Pt-600To800_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-600To800_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-600To800_MuEnrichedPt5
 QCD_Pt-800To1000_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-800To1000_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-800To1000_MuEnrichedPt5
 QCD_Pt-1000_MuEnrichedPt5:
-  miniAOD: /QCD_Pt-1000_MuEnrichedPt5_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-1000_MuEnrichedPt5
 
 QCD_Pt-15to20_EMEnriched:
-  miniAOD: /QCD_Pt-15to20_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-15to20_EMEnriched
 QCD_Pt-20to30_EMEnriched:
-  miniAOD: /QCD_Pt-20to30_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-20to30_EMEnriched
 QCD_Pt-30to50_EMEnriched:
-  miniAOD: /QCD_Pt-30to50_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-30to50_EMEnriched
 QCD_Pt-50to80_EMEnriched:
-  miniAOD: /QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-50to80_EMEnriched
 QCD_Pt-80to120_EMEnriched:
-  miniAOD: /QCD_Pt-80to120_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-80to120_EMEnriched
 QCD_Pt-120to170_EMEnriched:
-  miniAOD: /QCD_Pt-120to170_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-120to170_EMEnriched
 QCD_Pt-170to300_EMEnriched:
-  miniAOD: /QCD_Pt-170to300_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-170to300_EMEnriched
 QCD_Pt-300toInf_EMEnriched:
-  miniAOD: /QCD_Pt-300toInf_EMEnriched_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
   sampleType: QCD
   crossSection: QCD_Pt-300toInf_EMEnriched
-
-# to be added
-ZJetsToQQ_HT-200to400:
-  miniAOD: /ZJetsToQQ_HT-200to400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ZQQ
-  crossSection: ZJetsToQQ_HT-200to400
-ZJetsToQQ_HT-400to600:
-  miniAOD: /ZJetsToQQ_HT-400to600_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ZQQ
-  crossSection: ZJetsToQQ_HT-400to600
-ZJetsToQQ_HT-600to800:
-  miniAOD: /ZJetsToQQ_HT-600to800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ZQQ
-  crossSection: ZJetsToQQ_HT-600to800
-ZJetsToQQ_HT-800toInf:
-  miniAOD: /ZJetsToQQ_HT-800toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
-  sampleType: ZQQ
-  crossSection: ZJetsToQQ_HT-800toInf
-TTZZTo4b:
- miniAOD: /TTZZTo4b_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTVV
- crossSection: TTZZTo4b
-TTZZTo4b_ext1:
- miniAOD: /TTZZTo4b_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTVV
- crossSection: TTZZTo4b
-TTGG:
-  miniAOD:
-  sampleType: TTVV
-  crossSection: TTGG
-TTGJets:
-  miniAOD:
-  sampleType: TTV
-  crossSection: TTGJets
-#TTGJets_ext1:
-#  miniAOD:
-#  sampleType: TTV
-#  crossSection: TTGJets
-TTGamma_Dilept:
-  miniAOD:
-  sampleType: TTV
-  crossSection: TTGamma_Dilept
-TTGamma_Hadronic:
-  miniAOD:
-  sampleType: TTV
-  crossSection: TTGamma_Hadronic
-TTGamma_SingleLept:
-  miniAOD:
-  sampleType: TTV
-  crossSection: TTGamma_SingleLept
-TTTJ:
-  miniAOD:
-  sampleType: TTT
-  crossSection: TTTJ
-TTTW:
-  miniAOD:
-  sampleType: TTTV
-  crossSection: TTTW
-TTZHToNon4b:
-  miniAOD:
-  sampleType: TTVH
-  crossSection: TTZHToNon4b
-TTZHTo4b:
- miniAOD: /TTZHTo4b_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTVH
- crossSection: TTZHTo4b
-TTZHTo4b_ext1:
- miniAOD: /TTZHTo4b_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTVH
- crossSection: TTZHTo4b
-#TTZHToNon4b:
-TT4b:
- miniAOD: /TT4b_TuneCP5_13TeV_madgraph_pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TT
- crossSection: TT4b
-TTGJets:
- miniAOD: /TTGJets_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
- sampleType: TTV
- crossSection: TTGJets
-TTTT:
- miniAOD: /TTTT_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTTT
- crossSection: TTTT
-TTZToQQ_Dilept:
- miniAOD: /TTZToQQ_Dilept_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
- sampleType: TTV
- crossSection: TTZToQQ_Dilept
-TTZToNuNu:
- miniAOD: /TTZToNuNu_TuneCP5_13TeV_amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v3/MINIAODSIM
- sampleType: TTV
- crossSection: TTZToNuNu
-TTZToBB:
- miniAOD: /TTZToBB_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTV
- crossSection: TTZToBB
-TTZToLL_M-1to10:
- miniAOD: /TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
- sampleType: TTV
- crossSection: TTZToLLNuNu_M-10
-
-
-ZJetsToNuNu_HT-100To200:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-100To200
-ZJetsToNuNu_HT-1200To2500:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-1200To2500
-ZJetsToNuNu_HT-200To400:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-200To400
-ZJetsToNuNu_HT-2500ToInf:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-2500ToInf
-ZJetsToNuNu_HT-400To600:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-400To600
-ZJetsToNuNu_HT-600To800:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-600To800
-ZJetsToNuNu_HT-800To1200:
-  miniAOD:
-  sampleType: ZJNuNu
-  crossSection: ZJetsToNuNu_HT-800To1200
-
-EWK_ZTo2L:
-  miniAOD:
-  sampleType: EWK
-  crossSection: EWK_ZTo2L
-EWK_ZTo2Nu:
-  miniAOD:
-  sampleType: EWK
-  crossSection: EWK_ZTo2Nu
-

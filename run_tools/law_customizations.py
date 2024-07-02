@@ -63,6 +63,14 @@ class Task(law.Task):
     def fs_anaTuple(self):
         return self.setup.get_fs('anaTuple')
 
+    @property
+    def fs_histograms(self):
+        return self.setup.get_fs('histograms')
+
+    @property
+    def fs_json(self):
+        return self.setup.get_fs('json')
+
     def ana_path(self):
         return os.getenv("ANALYSIS_PATH")
 

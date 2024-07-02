@@ -55,12 +55,12 @@ filters = {
         }
 
 
-def createKeyFilterDict(sample_cfg_dict):
+def createKeyFilterDict(global_cfg_dict):
     reg_dict = {}
     filter_str = ""
-    channels_to_consider = sample_cfg_dict['channelSelection']
-    qcd_regions_to_consider = sample_cfg_dict['QCDRegions']
-    categories_to_consider = sample_cfg_dict["categories"]
+    channels_to_consider = global_cfg_dict['channelSelection']
+    qcd_regions_to_consider = global_cfg_dict['QCDRegions']
+    categories_to_consider = global_cfg_dict["categories"]
     for ch in channels_to_consider:
         for reg in qcd_regions_to_consider:
             for cat in categories_to_consider:
@@ -82,24 +82,24 @@ def createKeyFilterDict(sample_cfg_dict):
 def QCD_Estimation(histograms, all_samples_list, channel, category, uncName, scale, wantNegativeContributions):
     #print(channel, category)
     #print(histograms.keys())
-    key_B_data = ((channel, 'OS_AntiIso', category), ('Central', 'Central'))
+    #key_B_data = ((channel, 'OS_AntiIso', category), ('Central', 'Central'))
     key_B = ((channel, 'OS_AntiIso', category), (uncName, scale))
-    key_C_data = ((channel, 'SS_Iso', category), ('Central', 'Central'))
+    #key_C_data = ((channel, 'SS_Iso', category), ('Central', 'Central'))
     key_C = ((channel, 'SS_Iso', category), (uncName, scale))
-    key_D_data = ((channel, 'SS_AntiIso', category), ('Central', 'Central'))
+    #key_D_data = ((channel, 'SS_AntiIso', category), ('Central', 'Central'))
     key_D = ((channel, 'SS_AntiIso', category), (uncName, scale))
     hist_data = histograms['data']
     #print(hist_data.keys())
-    hist_data_B = hist_data[key_B_data].Clone()
+    hist_data_B = hist_data[key_B].Clone()
     #if channel != 'tauTau' and category != 'inclusive': return hist_data_B
-    hist_data_C = hist_data[key_C_data].Clone()
-    hist_data_D = hist_data[key_D_data].Clone()
+    hist_data_C = hist_data[key_C].Clone()
+    hist_data_D = hist_data[key_D].Clone()
     n_data_B = hist_data_B.Integral(0, hist_data_B.GetNbinsX()+1)
     n_data_C = hist_data_C.Integral(0, hist_data_C.GetNbinsX()+1)
     n_data_D = hist_data_D.Integral(0, hist_data_D.GetNbinsX()+1)
-    print(f"Initially Yield for data in OS AntiIso region is {key_B_data} is {n_data_B}")
-    print(f"Initially Yield for data in SS Iso region is{key_C_data} is {n_data_C}")
-    print(f"Initially Yield for data in SS AntiIso region is{key_D_data} is {n_data_D}")
+    print(f"Initially Yield for data in OS AntiIso region is {key_B} is {n_data_B}")
+    print(f"Initially Yield for data in SS Iso region is{key_C} is {n_data_C}")
+    print(f"Initially Yield for data in SS AntiIso region is{key_D} is {n_data_D}")
     for sample in all_samples_list:
         if sample=='data' or 'GluGluToBulkGraviton' in sample or 'GluGluToRadion' in sample or 'VBFToBulkGraviton' in sample or 'VBFToRadion' in sample or sample=='QCD':
             print(f"sample {sample} is not considered")
@@ -117,9 +117,9 @@ def QCD_Estimation(histograms, all_samples_list, channel, category, uncName, sca
         n_data_C-=n_sample_C
         n_sample_D = hist_sample_D.Integral(0, hist_sample_D.GetNbinsX()+1)
         n_data_D-=n_sample_D
-        print(f"Yield for data in OS AntiIso region {key_B_data} after removing {sample} with yield {n_sample_B} is {n_data_B}")
-        print(f"Yield for data in SS Iso region {key_C_data} after removing {sample} with yield {n_sample_C} is {n_data_C}")
-        print(f"Yield for data in SS AntiIso region {key_D_data} after removing {sample} with yield {n_sample_D} is {n_data_D}")
+        print(f"Yield for data in OS AntiIso region {key_B} after removing {sample} with yield {n_sample_B} is {n_data_B}")
+        print(f"Yield for data in SS Iso region {key_C} after removing {sample} with yield {n_sample_C} is {n_data_C}")
+        print(f"Yield for data in SS AntiIso region {key_D} after removing {sample} with yield {n_sample_D} is {n_data_D}")
         hist_data_B.Add(hist_sample_B, -1)
     #if n_data_C <= 0 or n_data_D <= 0:
         #print(f"n_data_C = {n_data_C}")
@@ -127,7 +127,7 @@ def QCD_Estimation(histograms, all_samples_list, channel, category, uncName, sca
     kappa = n_data_C/n_data_D if n_data_D != 0 else 0
     if kappa<0:
         print(f"transfer factor <0, {category}, {channel}, {uncName}, {scale}")
-        return ROOT.TH1D()
+        return ROOT.TH1D("","",hist_data_B.GetNbinsX(), hist_data_B.GetXaxis().GetBinLowEdge(1), hist_data_B.GetXaxis().GetBinUpEdge(hist_data_B.GetNbinsX()))
         #raise  RuntimeError(f"transfer factor <=0 ! {kappa}")
     hist_data_B.Scale(kappa)
     if wantNegativeContributions:
@@ -137,7 +137,8 @@ def QCD_Estimation(histograms, all_samples_list, channel, category, uncName, sca
             print(debug_info)
             print(negative_bins_info)
             print("Unable to estimate QCD")
-            return ROOT.TH1D()
+            return ROOT.TH1D("","",hist_data_B.GetNbinsX(), hist_data_B.GetXaxis().GetBinLowEdge(1), hist_data_B.GetXaxis().GetBinUpEdge(hist_data_B.GetNbinsX()))
+
             #raise RuntimeError("Unable to estimate QCD")
     return hist_data_B
 
@@ -187,7 +188,7 @@ def CompareYields(histograms, all_samples_list, channel, category, uncName, scal
         print(f"{sample} || {key_C} || {n_sample_C}")
         print(f"{sample} || {key_D} || {n_sample_D}")
 
-def AddQCDInHistDict(var, all_histograms, channels, categories, sample_type, uncName, all_samples_list, scales, wantNegativeContributions=True):
+def AddQCDInHistDict(var, all_histograms, channels, categories, uncName, all_samples_list, scales, wantNegativeContributions=False):
     if 'QCD' not in all_histograms.keys():
             all_histograms['QCD'] = {}
     for channel in channels:
@@ -204,7 +205,7 @@ def AddQCDInHistDict(var, all_histograms, channels, categories, sample_type, unc
                 key =( (channel, 'OS_Iso', cat), (uncName, scale))
                 all_histograms['QCD'][key] = QCD_Estimation(all_histograms, all_samples_list, channel, cat, uncName, scale,wantNegativeContributions)
 
-def ApplyBTagWeight(cat,applyBtag=True, finalWeight_name = 'final_weight_0'):
+def ApplyBTagWeight(cat,applyBtag=False, finalWeight_name = 'final_weight_0'):
     btag_weight = "1"
     btagshape_weight = "1"
     if applyBtag:
