@@ -146,15 +146,15 @@ def createAnatuple(inFile, treeName, outDir, setup, sample_name, anaCache, snaps
     hist_time = ROOT.TH1D(f"time", f"time", 1, 0, 1)
     end_time = datetime.datetime.now()
     hist_time.SetBinContent(1, (end_time - start_time).total_seconds())
-    for index,fileName in enumerate(outfilesNames):
-        outputRootFile= ROOT.TFile(fileName, "UPDATE", "", compression_settings)
-        rep = ReportTools.SaveReport(reports[index].GetValue(), reoprtName=f"Report")
-        outputRootFile.WriteTObject(rep, f"Report", "Overwrite")
-        if index==0:
-            outputRootFile.WriteTObject(hist_time, f"runtime", "Overwrite")
-        outputRootFile.Close()
-        # if print_cutflow:
-        #     report.Print()
+    # for index,fileName in enumerate(outfilesNames):
+    #     outputRootFile= ROOT.TFile(fileName, "UPDATE", "", compression_settings)
+    #     rep = ReportTools.SaveReport(reports[index].GetValue(), reoprtName=f"Report")
+    #     outputRootFile.WriteTObject(rep, f"Report", "Overwrite")
+    #     if index==0:
+    #         outputRootFile.WriteTObject(hist_time, f"runtime", "Overwrite")
+    #     outputRootFile.Close()
+    #     # if print_cutflow:
+    #     #     report.Print()
 
 if __name__ == "__main__":
     import argparse

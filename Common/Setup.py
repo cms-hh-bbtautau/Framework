@@ -131,7 +131,7 @@ class Setup:
         if fs_name not in self.fs_dict:
             full_fs_name = f'fs_{fs_name}'
             if full_fs_name in self.global_params:
-                if self.global_params[full_fs_name].startswith('/'):
+                if type(self.global_params[full_fs_name]) == str and self.global_params[full_fs_name].startswith('/'):
                     self.fs_dict[fs_name] = self.global_params[full_fs_name]
                 else:
                     self.fs_dict[fs_name] = WLCGFileSystem(self.global_params[full_fs_name])

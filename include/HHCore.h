@@ -3,6 +3,65 @@
 #include "AnalysisTools.h"
 #include "GenTools.h"
 
+enum class Vleg { PromptElectron = 1, PromptMuon = 2, TauDecayedToElectron = 3, TauDecayedToMuon = 4,
+                  TauDecayedToHadrons = 5, Nu = 6, Jet = 7 };
+
+struct VCand
+{
+  static constexpr size_t n_legs = 2;
+  std::array<Vleg, n_legs> leg_kind;
+  std::array<int, n_legs> leg_index;
+  std::array<LorentzVectorM, n_legs> leg_p4; // p4 of quark from W->qq or lep p4
+  std::array<LorentzVectorM, n_legs> leg_vis_p4; // p4 of jet matched to quark; if no match = 0
+  LorentzVectorM cand_p4;
+};
+
+struct HVVCand
+{
+  static constexpr size_t n_legs = 2;
+  std::array<VCand, n_legs> legs;
+  LorentzVectorM cand_p4;
+};
+
+// struct HBBCand
+// {
+//   static constexpr size_t n_legs = 2;
+//   std::array<int, n_legs> leg_index;
+//   std::array<LorentzVectorM, n_legs> leg_p4; // p4 of quark from H->bb
+//   std::array<LorentzVectorM, n_legs> leg_vis_p4; // p4 of jet matched to quark; if no match = 0
+//   LorentzVectorM cand_p4;
+// };
+
+// enum class Wleg { PromptElectron = 1, PromptMuon = 2, TauDecayedToElectron = 3, TauDecayedToMuon = 4,
+//                   TauDecayedToHadrons = 5, Nu = 6, Jet = 7 };
+
+// struct WCand
+// {
+//   static constexpr size_t n_legs = 2;
+//   std::array<Wleg, n_legs> leg_kind;
+//   std::array<int, n_legs> leg_index;
+//   std::array<LorentzVectorM, n_legs> leg_p4; // p4 of quark from W->qq or lep p4
+//   std::array<LorentzVectorM, n_legs> leg_vis_p4; // p4 of jet matched to quark; if no match = 0
+//   LorentzVectorM cand_p4;
+// };
+
+// struct HWWCand
+// {
+//   static constexpr size_t n_legs = 2;
+//   std::array<WCand, n_legs> legs;
+//   LorentzVectorM cand_p4;
+// };
+
+struct HBBCand
+{
+  static constexpr size_t n_legs = 2;
+  std::array<int, n_legs> leg_index;
+  std::array<LorentzVectorM, n_legs> leg_p4; // p4 of quark from H->bb
+  std::array<LorentzVectorM, n_legs> leg_vis_p4; // p4 of jet matched to quark; if no match = 0
+  LorentzVectorM cand_p4;
+};
+
+
 template<size_t N>
 struct HTTCand {
   static constexpr size_t n_legs = N;

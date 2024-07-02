@@ -37,6 +37,48 @@ def GenJetHttOverlapRemoval(df):
 def RequestOnlyResolvedGenJets(df):
     return df.Filter("GenJet_idx[GenJet_B2].size()==2", "Resolved topology")
 
+
+def RecoHWWCandidateSelection(df):
+    df = df.Define("Electron_sel", """
+        v_ops::pt(Electron_p4) > 10 && abs(v_ops::eta(Electron_p4)) < 2.5 && abs(Electron_dz) < 0.2 && abs(Electron_dxy) < 0.045
+        && Electron_mvaIso_WP80 """) # this cut tells that electron is not inside of a jet
+
+    df = df.Define("Muon_sel", """
+        v_ops::pt(Muon_p4) > 15 && abs(v_ops::eta(Muon_p4)) < 2.4 && abs(Muon_dz) < 0.2 && abs(Muon_dxy) < 0.045
+        && Muon_tightId && Muon_pfRelIso04_all < 0.15""")
+
+    df = df.Define("N_sel_Ele", "Electron_pt[Electron_sel].size()")
+    df = df.Define("N_sel_Mu", "Muon_pt[Muon_sel].size()")
+    df = df.Define("N_sel_lep", "N_sel_Ele + N_sel_Mu")
+    df = df.Filter("N_sel_lep > 0 && N_sel_lep < 3", "lepton selection")
+
+    df = df.Define("is_SL", "N_sel_lep == 1")
+    df = df.Define("is_DL", "N_sel_lep == 2")
+
+    df = df.Define("lep1_p4", "if (N_sel_Mu > 0) return Muon_p4[Muon_sel][0]; return Electron_p4[Electron_sel][0];")
+    df = df.Define("lep1_type", "if (N_sel_Mu > 0) return 1; return 0;")
+
+    df = df.Define("lep2_p4", """if (N_sel_Mu > 1) return Muon_p4[Muon_sel][1];
+                                 if (N_sel_Ele > 1) return Electron_p4[Electron_sel][1];
+                                 if (N_sel_Mu == 1 && N_sel_Ele == 1) return Electron_p4[Electron_sel][0];
+                                 return LorentzVectorM(); """)
+    df = df.Define("lep2_type", """if (N_sel_Mu > 1) return 1;
+                                   if (N_sel_Ele > 1) return 0;
+                                   if (N_sel_Mu == 1 && N_sel_Ele == 1) return 0;
+                                   return -1; """)
+    return df
+
+
+def RecoHWWJetSelection(df):
+    df = df.Define("Jet_Incl", f"v_ops::pt(Jet_p4)>20 && abs(v_ops::eta(Jet_p4)) < 2.5 && ( Jet_jetId & 2 )")
+    df = df.Define("Jet_sel", """if (is_SL)
+                                    return RemoveOverlaps(Jet_p4, Jet_Incl,{ {lep1_p4, },}, 1, 0.5);
+                                 return RemoveOverlaps(Jet_p4, Jet_Incl,{ {lep1_p4, lep2_p4},}, 2, 0.5); """)
+    df = df.Define("n_Jet_Sel", "Jet_p4[Jet_sel].size()")
+    df = df.Filter("return is_SL ? n_Jet_Sel >= 4 : n_Jet_Sel >= 2;", "jet selection")
+    return df
+
+
 def RecoHttCandidateSelection(df, config):
     df = df.Define("Electron_B0", f"""
         v_ops::pt(Electron_p4) > 10 && abs(v_ops::eta(Electron_p4)) < 2.5 && abs(Electron_dz) < 0.2 && abs(Electron_dxy) < 0.045  """) # && (Electron_mvaIso_WP90 || (Electron_mvaNoIso_WP90 && Electron_pfRelIso03_all < 0.5))
@@ -80,6 +122,7 @@ def RecoHttCandidateSelection(df, config):
     cand_list_str = ', '.join([ '&' + c for c in cand_columns])
     return df.Define('HttCandidate', f'GetBestHTTCandidate<2>({{ {cand_list_str} }}, event)')
 
+# can remove
 def ThirdLeptonVeto(df):
     df = df.Define("Electron_vetoSel",
                    f"""v_ops::pt(Electron_p4) > 10 && abs(v_ops::eta(Electron_p4)) < 2.5 && abs(Electron_dz) < 0.2 && abs(Electron_dxy) < 0.045
@@ -96,8 +139,8 @@ def ThirdLeptonVeto(df):
 def RecoJetSelection(df):
     df = df.Define("Jet_bIncl", f"v_ops::pt(Jet_p4)>20 && abs(v_ops::eta(Jet_p4)) < 2.5 && ( Jet_jetId & 2 )")
     df = df.Define("FatJet_bbIncl", "FatJet_msoftdrop > 30 && abs(v_ops::eta(FatJet_p4)) < 2.5")
-    df = df.Define("Jet_bCand", "RemoveOverlaps(Jet_p4, Jet_bIncl,{{HttCandidate.leg_p4[0], HttCandidate.leg_p4[1]},}, 2, 0.5)")
-    df = df.Define("FatJet_bbCand", "RemoveOverlaps(FatJet_p4, FatJet_bbIncl, {{HttCandidate.leg_p4[0], HttCandidate.leg_p4[1]},}, 2, 0.5)")
+    df = df.Define("Jet_bCand", "RemoveOverlaps(Jet_p4, Jet_bIncl,{ {HttCandidate.leg_p4[0], HttCandidate.leg_p4[1]},}, 2, 0.5)")
+    df = df.Define("FatJet_bbCand", "RemoveOverlaps(FatJet_p4, FatJet_bbIncl, { {HttCandidate.leg_p4[0], HttCandidate.leg_p4[1]},}, 2, 0.5)")
     return df
 
 def ExtraRecoJetSelection(df):

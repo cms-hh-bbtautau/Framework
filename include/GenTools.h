@@ -81,11 +81,20 @@ struct PdG {
   static int nu_tau() { static const int pdg = ParticleDB::GetParticleInfo("nu_tau").pdgId; return pdg; }
   static int b() { static const int pdg = ParticleDB::GetParticleInfo("b").pdgId; return pdg; }
   static int bbar() { static const int pdg = ParticleDB::GetParticleInfo("bbar").pdgId; return pdg; }
+  static int Wplus() { static const int pdg = ParticleDB::GetParticleInfo("W+").pdgId; return pdg; }
+  static int Wminus() { static const int pdg = ParticleDB::GetParticleInfo("W-").pdgId; return pdg; }
+  static int Z() { static const int pdg = ParticleDB::GetParticleInfo("Z0").pdgId; return pdg; }
 
   static bool isNeutrino(int pdg)
   {
     static const std::set<int> neutrinos = { nu_e(), nu_mu(), nu_tau() };
     return neutrinos.count(std::abs(pdg)) > 0;
+  }
+
+  static bool isLepton(int pdg)
+  {
+    static const std::set<int> leptons = { e(), mu(), tau() };
+    return leptons.count(std::abs(pdg)) > 0;
   }
 };
 
@@ -95,6 +104,8 @@ inline Leg PdGToLeg(int pdg)
       { PdG::e(), Leg::e },
       { PdG::mu(), Leg::mu },
       { PdG::tau(), Leg::tau },
+      // { PdG::Wplus(), Leg::w_plus },
+      // { PdG::Wminus(), Leg::w_minus }
     };
     const auto iter = pdg_to_leg.find(std::abs(pdg));
     if(iter == pdg_to_leg.end())
